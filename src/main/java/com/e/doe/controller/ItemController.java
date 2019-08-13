@@ -32,7 +32,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Retorna uma lista de itens")
 	@GetMapping("/itens")
-	public List<Item> getitems(){
+	public List<Item> getitens(){
 		return itemRepository.findAll();
 	}
 	
