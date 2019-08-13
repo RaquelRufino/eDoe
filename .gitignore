@@ -1,16 +1,15 @@
-target/*
-.settings/*
+# Compiled Files
+bin/
+out/
+
+
+# Eclipse
 .classpath
 .project
-.factorypath
-.attach_pid*
+spring-*/src/main/java/META-INF/MANIFEST.MF
+
+*.DS_Store
+target
+.settings
 .idea
 *.iml
-/target
-.sts4-cache/
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-_site/
