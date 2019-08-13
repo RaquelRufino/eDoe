@@ -1,7 +1,6 @@
 package com.e.doe.models;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,7 +28,7 @@ public class Item implements Serializable {
 	
 	private int quantidade;
 	
-	private List<String> tags;
+	private String[] tags;
 	
 	private Usuario usuario;
 	
@@ -106,7 +105,7 @@ public class Item implements Serializable {
 	 * @return id do item
 	 */
 	
-	public List<String> getTags() {
+	public String[] getTags() {
 		return tags;
 	}
 	
@@ -117,7 +116,7 @@ public class Item implements Serializable {
 	 * @param tags novas do item
 	 */
 
-	public void setTags(List<String> tags) {
+	public void setTags(String[] tags) {
 		this.tags = tags;
 	}
 
