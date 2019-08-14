@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e.doe.models.Item;
+import com.e.doe.models.Usuario;
 import com.e.doe.repository.ItemRepository;
+import com.e.doe.repository.UsuarioRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,22 +31,45 @@ public class ItemController {
 	
 	@Autowired
 	ItemRepository itemRepository;
+	UsuarioRepository usuarioRepository;
 	
 	@ApiOperation(value="Retorna uma lista de itens")
 	@GetMapping("/itens")
-	public List<Item> getitens(){
-		return itemRepository.findAll();
+	public String getItens(){
+		
+		List<Item> itens =  itemRepository.findAll();
+		
+		String Itens = "";
+
+		for (Item item : itens) {
+			Itens += item.toString() ;
+					//+ ", " + this.getUsuarioIdentificacao(item.getIdDoador()) + " | ";
+		}
+
+		Itens += itens.get(itens.size() - 1).toString();
+		return Itens;
 	}
 	
 	@ApiOperation(value="Retorna um item unico")
 	@GetMapping("/item/{id}")
-	public Item getitem(@PathVariable(value="id") long id){
-		return itemRepository.findById(id);
+	public String getItem(@PathVariable(value="id") long id){
+		return itemRepository.findById(id).toString();
 	}
 	
-	@ApiOperation(value="Salva um item")
+	@ApiOperation(value="Adicionando descritor")
+	@PostMapping("/descritor")
+	public Item postDescricao(@RequestBody @Valid Item item) {
+		
+		String descricao = item.getDescricao();
+		item.setDescricao(descricao.toLowerCase());				
+		
+		return itemRepository.save(item);
+	}
+	
+	@ApiOperation(value="Adicionando itens")
 	@PostMapping("/item")
-	public Item postitem(@RequestBody @Valid Item item) {
+	public Item postItem(@RequestBody @Valid Item item) {
+
 		return itemRepository.save(item);
 	}
 
@@ -56,8 +81,23 @@ public class ItemController {
 	}
 	
 	@ApiOperation(value="Atualiza um item")
-	@PutMapping("/item")
-	public Item atualizaitem(@RequestBody @Valid Item item) {
-		return itemRepository.save(item);
+	@PutMapping("/item/{id}")
+	public Item atualizaitem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
+		
+		Item existingItem =  itemRepository.findById(id);
+		if (!(item.getTags() == null) && !(item.getTags().length == 0)) {
+			existingItem.setTags(item.getTags());
+		}
+		
+		if ((item.getQuantidade() > 0)) {
+			existingItem.setQuantidade(item.getQuantidade());
+		}
+
+		return itemRepository.save(existingItem);
+	}
+	
+	public String getUsuarioIdentificacao(String idDoador) {
+		Usuario usuario = this.usuarioRepository.findById(idDoador);
+	    return usuario.getStatus() + ": " + usuario.getIdentificacao();
 	}
 }

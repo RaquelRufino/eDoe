@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository;
 import com.e.doe.models.Usuario;
 
 
-@Repository
+@Repository("usuarioRepository")
 public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
 	
 	Usuario findById(String id);
 
 	List<Usuario> findByNome(String Nome);
+	
 }

@@ -20,7 +20,7 @@ import javax.persistence.Table;
 public class Item implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "id")
@@ -35,8 +35,8 @@ public class Item implements Serializable {
 	@Column(name = "tags")
 	private String[] tags;
 	
-	@Column(name = "idUsuario")
-	private String idUsuario;
+	@Column(name = "idDoador")
+	private String idDoador;
 	
 	/**
 	 * 
@@ -133,8 +133,8 @@ public class Item implements Serializable {
 	 * @return usuario do item
 	 */
 	
-	public String getUsuario() {
-		return idUsuario;
+	public String getIdDoador() {
+		return idDoador;
 	}
 
 	/**
@@ -144,9 +144,21 @@ public class Item implements Serializable {
 	 * @param Usuario novo do item
 	 */
 	
-	public void setUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setIdDoador(String idDoador) {
+		this.idDoador = idDoador;
 	}
+
+	@Override
+	public String toString() {
+		return this.getId() + " - " + this.getDescricao() + ", tags: " + this.tagsEmString() +
+				", quantidade: " + this.getQuantidade() ;
+	  }
+
+	private String tagsEmString() {
+		return "[" + String.join(", ", this.getTags()) + "]";
+
+	}
+	
 
 
 }

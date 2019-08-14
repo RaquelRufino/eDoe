@@ -137,7 +137,7 @@ public class Usuario implements Serializable {
 	 * @return o valor do status do usuario
 	 */
 	public String getStatus() {
-		return this.status;
+		return this.status.toLowerCase();
 	}
 
 	/**
