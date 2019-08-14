@@ -2,6 +2,7 @@ package com.e.doe.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,18 +21,36 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long id;
-	
+	@Column(name = "identificador")
+	private String id;
+
+	@Column(name = "nome")
 	private String nome;
-	
+
+	@Column(name = "email")
 	private String email;
-		
+
+
+	@Column(name = "telefone")
 	private String telefone;
-	
+
+
+	@Column(name = "classe")
 	private String classe;
-	
+
+	@Column(name = "status")
 	private String status;
+	
+	
+	/**
+	 * 
+	 * Retorna o identificador do usuario.
+	 * 
+	 * @return identificador do usuario
+	 */
+	public String getId() {
+		return id;
+	}
 
 
 	/**
@@ -129,6 +148,20 @@ public class Usuario implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	@Override
+	public String toString() {
+		return this.getIdentificacao() + ", " + this.email + ", " + this.telefone + ", status: " + this.status;
+	}
 
+	/**
+	 * 
+	 * Retorna a identificacao completa do usuario,
+	 *
+	 * @return A identificacao do usuario.
+	 */
+	public String getIdentificacao() {
+		return this.nome + "/" + this.id;
+	}
 
 }

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e.doe.repository.UsuarioRepository;
@@ -19,6 +20,7 @@ import io.swagger.annotations.ApiOperation;
 
 import com.e.doe.models.Usuario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -34,15 +36,30 @@ public class UsuarioController {
 	UsuarioRepository usuarioRepository;
 	
 	@ApiOperation(value="Retorna uma lista de Usuarios")
-	@GetMapping("/usuarios")
+	@GetMapping(value = "/usuarios")
 	public List<Usuario> getUsuarios(){
 		return usuarioRepository.findAll();
 	}
 	
-	@ApiOperation(value="Retorna um usuario unico")
+	@ApiOperation(value="Retorna um usuario pelo id")
 	@GetMapping("/usuario/{id}")
-	public Usuario getUsuario(@PathVariable(value="id") long id){
+	public Usuario getUsuario(@PathVariable(value="id") String id){
 		return usuarioRepository.findById(id);
+	}
+	
+	@ApiOperation(value="Retorna uma lista de usuarios pelo nome")
+	@RequestMapping("/usuarioByNome/{nome}")
+	public String GetUsuariosByName(@PathVariable(value="nome") String nome){
+
+		List<Usuario> usuarios = usuarioRepository.findByNome(nome);
+		String st = "";
+		
+		for (int i = 0; i < usuarios.size() - 1; i++) {
+			st += usuarios.get(i).toString() + " | ";
+		}
+
+		st += usuarios.get(usuarios.size() - 1).toString();
+		return st;
 	}
 	
 	@ApiOperation(value="Salva um usuario")
@@ -53,9 +70,10 @@ public class UsuarioController {
 
 	@ApiOperation(value="Deleta um usuario")
 	@DeleteMapping("/usuario/{id}")
-	public void deletaUsuario(@PathVariable(value="id") long id) {
+	public String deletaUsuario(@PathVariable(value="id") String id) {
 		Usuario usuario =  usuarioRepository.findById(id);
 		usuarioRepository.delete(usuario);
+		return "Usuario deletado";
 	}
 	
 	@ApiOperation(value="Atualiza um usuario")
@@ -63,4 +81,6 @@ public class UsuarioController {
 	public Usuario atualizaUsuario(@RequestBody @Valid Usuario usuario) {
 		return usuarioRepository.save(usuario);
 	}
+
+
 }
