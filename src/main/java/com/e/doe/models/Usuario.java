@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 /**
  * 
@@ -19,12 +20,13 @@ public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "identificador")
+	@Column(name = "id")
 	private String id;
 
 	@Column(name = "nome")
 	private String nome;
-
+	
+	@Email
 	@Column(name = "email")
 	private String email;
 

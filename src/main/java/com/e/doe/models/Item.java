@@ -35,8 +35,8 @@ public class Item implements Serializable {
 	@Column(name = "tags")
 	private String[] tags;
 	
-	@Column(name = "usuario")
-	private Usuario usuario;
+	@Column(name = "idUsuario")
+	private String idUsuario;
 	
 	/**
 	 * 
@@ -133,8 +133,8 @@ public class Item implements Serializable {
 	 * @return usuario do item
 	 */
 	
-	public Usuario getUsuario() {
-		return usuario;
+	public String getUsuario() {
+		return idUsuario;
 	}
 
 	/**
@@ -144,8 +144,8 @@ public class Item implements Serializable {
 	 * @param Usuario novo do item
 	 */
 	
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setUsuario(String idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 
 

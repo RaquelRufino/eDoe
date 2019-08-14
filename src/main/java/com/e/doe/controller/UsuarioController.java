@@ -45,7 +45,7 @@ public class UsuarioController {
 	}
 	
 	@ApiOperation(value="Retorna uma lista de usuarios pelo nome")
-	@RequestMapping("/usuarioByNome/{nome}")
+	@RequestMapping("/usuarioByName/{nome}")
 	public String getUsuariosByName(@PathVariable(value="nome") String nome){
 
 		List<Usuario> usuarios = usuarioRepository.findByNome(nome);
@@ -77,9 +77,18 @@ public class UsuarioController {
 	@PutMapping("/usuario/{id}")
 	public Usuario atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid Usuario usuario) {
 		Usuario existingUsuario =  usuarioRepository.findById(id);
-		existingUsuario.setNome(usuario.getNome());
-		existingUsuario.setEmail(usuario.getEmail());
-		existingUsuario.setTelefone(usuario.getTelefone());
+		
+		if (!(usuario.getNome() == null) && !(usuario.getNome().trim().equals(""))) {
+			existingUsuario.setNome(usuario.getNome());
+		}
+		
+		if (!(usuario.getEmail() == null) && !(usuario.getEmail().trim().equals(""))) {
+			existingUsuario.setEmail(usuario.getEmail());
+		}
+		
+		if (!(usuario.getTelefone() == null) && !(usuario.getTelefone().trim().equals(""))) {
+			existingUsuario.setTelefone(usuario.getTelefone());
+		}
 		return usuarioRepository.save(existingUsuario);
 	}
 
