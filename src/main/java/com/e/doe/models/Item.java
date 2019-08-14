@@ -2,6 +2,7 @@ package com.e.doe.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,14 +23,19 @@ public class Item implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name = "id")
 	private long id;
 	
+	@Column(name = "descricao")
 	private String descricao;
 	
+	@Column(name = "quantidade")
 	private int quantidade;
 	
+	@Column(name = "tags")
 	private String[] tags;
 	
+	@Column(name = "usuario")
 	private Usuario usuario;
 	
 	/**

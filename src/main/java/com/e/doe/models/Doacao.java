@@ -2,6 +2,7 @@ package com.e.doe.models;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,11 +23,22 @@ public class Doacao implements Serializable {
 
 	  @Id
 	  @GeneratedValue(strategy=GenerationType.AUTO)
+	  @Column(name = "id")
 	  private long id;
+	  
+	  @Column(name = "data")
 	  private String data;
+	  
+	  @Column(name = "idDoador")
 	  private long idDoador;
+	  
+	  @Column(name = "descricao")
 	  private String descricao;
+	  
+	  @Column(name = "quantidade")
 	  private int quantidade;
+	  
+	  @Column(name = "idReceptor")
 	  private long idReceptor;
 	
 	/**

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e.doe.repository.UsuarioRepository;
@@ -20,7 +19,6 @@ import io.swagger.annotations.ApiOperation;
 
 import com.e.doe.models.Usuario;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -29,7 +27,6 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping(value="/edoe")
 @Api(value="API REST eDoe")
-
 public class UsuarioController {
 	
 	@Autowired
@@ -43,13 +40,13 @@ public class UsuarioController {
 	
 	@ApiOperation(value="Retorna um usuario pelo id")
 	@GetMapping("/usuario/{id}")
-	public Usuario getUsuario(@PathVariable(value="id") String id){
+	public Usuario getUsuarioById(@PathVariable(value="id") String id){
 		return usuarioRepository.findById(id);
 	}
 	
 	@ApiOperation(value="Retorna uma lista de usuarios pelo nome")
 	@RequestMapping("/usuarioByNome/{nome}")
-	public String GetUsuariosByName(@PathVariable(value="nome") String nome){
+	public String getUsuariosByName(@PathVariable(value="nome") String nome){
 
 		List<Usuario> usuarios = usuarioRepository.findByNome(nome);
 		String st = "";
@@ -77,9 +74,13 @@ public class UsuarioController {
 	}
 	
 	@ApiOperation(value="Atualiza um usuario")
-	@PutMapping("/usuario")
-	public Usuario atualizaUsuario(@RequestBody @Valid Usuario usuario) {
-		return usuarioRepository.save(usuario);
+	@PutMapping("/usuario/{id}")
+	public Usuario atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid Usuario usuario) {
+		Usuario existingUsuario =  usuarioRepository.findById(id);
+		existingUsuario.setNome(usuario.getNome());
+		existingUsuario.setEmail(usuario.getEmail());
+		existingUsuario.setTelefone(usuario.getTelefone());
+		return usuarioRepository.save(existingUsuario);
 	}
 
 

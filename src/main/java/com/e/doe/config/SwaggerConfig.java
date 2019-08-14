@@ -1,9 +1,8 @@
 package com.e.doe.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-import com.google.common.base.Predicate;
+import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
