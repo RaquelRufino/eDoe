@@ -1,4 +1,5 @@
-package com.e.doe.models;
+package com.e.doe.manager.item.models;
+
 
 import java.io.Serializable;
 

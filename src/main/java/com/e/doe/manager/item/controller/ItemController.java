@@ -1,4 +1,5 @@
-package com.e.doe.controller;
+package com.e.doe.manager.item.controller;
+
 
 import java.util.List;
 
@@ -15,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.e.doe.models.Item;
-import com.e.doe.models.Usuario;
-import com.e.doe.repository.ItemRepository;
-import com.e.doe.repository.UsuarioRepository;
+import com.e.doe.manager.item.models.Item;
+import com.e.doe.manager.usuario.models.Usuario;
+import com.e.doe.manager.usuario.repositories.UsuarioRepository;
+import com.e.doe.manager.item.repositories.ItemRepository;
+
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

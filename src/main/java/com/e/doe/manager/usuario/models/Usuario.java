@@ -1,4 +1,4 @@
-package com.e.doe.models;
+package com.e.doe.manager.usuario.models;
 
 import java.io.Serializable;
 

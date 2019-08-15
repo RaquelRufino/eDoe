@@ -1,11 +1,11 @@
-package com.e.doe.repository;
+package com.e.doe.manager.usuario.repositories;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.e.doe.models.Usuario;
+import com.e.doe.manager.usuario.models.Usuario;
 
 
 @Repository("usuarioRepository")
