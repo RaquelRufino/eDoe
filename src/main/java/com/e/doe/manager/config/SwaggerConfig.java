@@ -1,4 +1,4 @@
-package com.e.doe.config;
+package com.e.doe.manager.config;
 
 import org.springframework.context.annotation.Bean;
 
