@@ -1,7 +1,9 @@
-package com.e.doe.manager.donation.controller;
+package com.e.doe.manager.donation;
 
 
 import java.util.List;
+
+
 
 import javax.validation.Valid;
 
@@ -16,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.e.doe.manager.donation.models.Donation;
-import com.e.doe.manager.donation.repositories.DonationRepository;
 import com.e.doe.manager.utils.RestConstants;
 
 import io.swagger.annotations.Api;
@@ -57,7 +57,7 @@ public class DonationController {
 		DonationRepository.delete(donation);
 	}
 	
-	@ApiOperation(value="Updates a donation")
+	@ApiOperation(value="Update a donation")
 	@PutMapping({"/{id}/", "/{id}"})
 	public Donation updateDonation(@RequestBody @Valid Donation donation) {
 		return DonationRepository.save(donation);

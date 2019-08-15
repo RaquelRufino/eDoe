@@ -1,18 +1,16 @@
-package com.e.doe.manager.user.repositories;
+package com.e.doe.manager.user;
 
 import java.util.List;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.e.doe.manager.usuario.models.Usuario;
-
-
 @Repository("userRepository")
-public interface UserRepository extends JpaRepository<Usuario, Long>{
+public interface UserRepository extends JpaRepository<User, Long>{
 	
-	Usuario findById(String id);
+	User findById(String id);
 
-	List<Usuario> findByName(String Name);
+	List<User> findByName(String Name);
 	
 }

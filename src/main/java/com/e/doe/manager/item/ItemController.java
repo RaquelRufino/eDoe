@@ -1,5 +1,4 @@
-package com.e.doe.manager.item.controller;
-
+package com.e.doe.manager.item;
 
 import java.util.List;
 
@@ -16,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.e.doe.manager.item.models.Item;
-import com.e.doe.manager.usuario.models.Usuario;
+import com.e.doe.manager.donatedItem.DonatedItem;
+import com.e.doe.manager.donatedItem.DonatedItemRepository;
+import com.e.doe.manager.user.User;
+import com.e.doe.manager.user.UserRepository;
 import com.e.doe.manager.utils.RestConstants;
-import com.e.doe.manager.item.repositories.ItemRepository;
-import com.e.doe.manager.user.repositories.UserRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -28,28 +27,20 @@ import io.swagger.annotations.ApiOperation;
 @CrossOrigin
 @RestController
 @RequestMapping(value = RestConstants.ITEM_URI)
-@Api(tags = "Item")
+@Api(tags = "item")
 public class ItemController {
 	
 	@Autowired
 	ItemRepository itemRepository;
 	UserRepository usuarioRepository;
 	
-	@ApiOperation(value="Get All itens")
+	@ApiOperation(value="Get All Items")
 	@GetMapping({"/", ""})
-	public String getItems(){
+	public List<Item> getItems(){
 		
-		List<Item> items =  itemRepository.findAll();
+		List<Item> items = itemRepository.findAll();
 		
-		String Items = "";
-
-		for (Item item : items) {
-			Items += item.toString() ;
-					//+ ", " + this.getUsuarioIdentificacao(item.getIdDoador()) + " | ";
-		}
-
-		Items += items.get(items.size() - 1).toString();
-		return Items;
+		return items;
 	}
 	
 	@ApiOperation(value="Get a Item")
@@ -66,31 +57,19 @@ public class ItemController {
 		return itemRepository.save(item);
 	}
 
-	@ApiOperation(value="Delete a item")
+	@ApiOperation(value="Delete a Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
 	public void deleteItem(@PathVariable(value="id") long id) {
-		Item item =  itemRepository.findById(id);
+		Item item = itemRepository.findById(id);
 		itemRepository.delete(item);
 	}
 	
-	@ApiOperation(value="Update a item")
+	@ApiOperation(value="Update a Item")
 	@PutMapping({"/{id}/", "/{id}"})
 	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
-		Item existingItem =  itemRepository.findById(id);
-		if (!(item.getTags() == null) && !(item.getTags().length == 0)) {
-			existingItem.setTags(item.getTags());
-		}
-		
-		if ((item.getAmount() > 0)) {
-			existingItem.setAmount(item.getAmount());
-		}
-
+		Item existingItem =  ItemRepository.findById(id);
 		return itemRepository.save(existingItem);
 	}
-	
-	public String getUsuarioIdentificacao(String idDonation) {
-		Usuario user = this.usuarioRepository.findById(idDonation);
-	    return user.getStatus() + ": " + user.getIdentificacao();
-	}
+}
 }

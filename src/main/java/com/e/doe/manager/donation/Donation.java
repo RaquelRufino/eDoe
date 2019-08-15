@@ -1,4 +1,4 @@
-package com.e.doe.manager.donation.models;
+package com.e.doe.manager.donation;
 
 
 import java.io.Serializable;
@@ -21,23 +21,21 @@ public class Donation implements Serializable {
 	@Column(name = "id")
 	private long id;
   
-	@Column(name = "date")
+	@Column(name = "date", nullable = false)
 	private String date;
   
-	@Column(name = "idDonation")
+	@Column(name = "idDonation", nullable = false)
 	private String idDonation;
   
-	@Column(name = "description")
+	@Column(name = "description", nullable = false)
 	private String description;
   
-	@Column(name = "amount")
+	@Column(name = "amount", nullable = false)
 	private int amount;
   
-	@Column(name = "idReceptor")
+	@Column(name = "idReceptor", nullable = false)
 	private String idReceptor;
 	
-	public Donation() {
-	}
 
 	
 	public long getId() {
