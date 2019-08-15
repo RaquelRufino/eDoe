@@ -18,10 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.e.doe.manager.item.models.Item;
 import com.e.doe.manager.usuario.models.Usuario;
-import com.e.doe.manager.usuario.repositories.UsuarioRepository;
 import com.e.doe.manager.utils.RestConstants;
 import com.e.doe.manager.item.repositories.ItemRepository;
-
+import com.e.doe.manager.user.repositories.UserRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +33,7 @@ public class ItemController {
 	
 	@Autowired
 	ItemRepository itemRepository;
-	UsuarioRepository usuarioRepository;
+	UserRepository usuarioRepository;
 	
 	@ApiOperation(value="Get All itens")
 	@GetMapping({"/", ""})

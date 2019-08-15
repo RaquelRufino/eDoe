@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.e.doe.manager.user.repositories.UserRepository;
 import com.e.doe.manager.usuario.models.Usuario;
-import com.e.doe.manager.usuario.repositories.UsuarioRepository;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,7 +34,7 @@ import javax.validation.Valid;
 public class UsuarioController {
 	
 	@Autowired
-	UsuarioRepository usuarioRepository;
+	UserRepository usuarioRepository;
 	
 	@ApiOperation(value="Retorna uma lista de Usuarios")
 	@GetMapping(value = "/usuarios")
