@@ -15,9 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.e.doe.manager.donatedItem.DonatedItem;
-import com.e.doe.manager.donatedItem.DonatedItemRepository;
-import com.e.doe.manager.user.User;
 import com.e.doe.manager.user.UserRepository;
 import com.e.doe.manager.utils.RestConstants;
 
@@ -68,8 +65,8 @@ public class ItemController {
 	@PutMapping({"/{id}/", "/{id}"})
 	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
-		Item existingItem =  ItemRepository.findById(id);
+		Item existingItem =  itemRepository.findById(id);
 		return itemRepository.save(existingItem);
 	}
-}
+
 }
