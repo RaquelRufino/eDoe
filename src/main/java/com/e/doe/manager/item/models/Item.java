@@ -10,14 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**
- * 
- * Representacao de um Item na aplicacao.
- *
- */
-
 @Entity
-@Table(name="ITEM")
+@Table(name="tb_item")
 public class Item implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -27,132 +21,64 @@ public class Item implements Serializable {
 	@Column(name = "id")
 	private long id;
 	
-	@Column(name = "descricao")
-	private String descricao;
+	@Column(name = "description")
+	private String description;
 	
-	@Column(name = "quantidade")
-	private int quantidade;
+	@Column(name = "amount")
+	private int amount;
 	
 	@Column(name = "tags")
 	private String[] tags;
 	
-	@Column(name = "idDoador")
-	private String idDoador;
-	
-	/**
-	 * 
-	 * Retorna o id do item.
-	 * 
-	 * @return id do item
-	 */
-	
+	@Column(name = "idDonation")
+	private String idDonation;
+
 	public long getId() {
 		return id;
 	}
-
-	/**
-	 * 
-	 * Atualiza o id do tipo.
-	 * 
-	 * @param id novo do item
-	 */
 	
 	public void setId(long id) {
 		this.id = id;
 	}
 	
-	/**
-	 * 
-	 * Retorna a descricao do item.
-	 * 
-	 * @return descricao do item
-	 */
+	public String getDescription() {
+		return description;
+	}
 	
-	public String getDescricao() {
-		return descricao;
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
+	public int getAmount() {
+		return amount;
 	}
 
-	/**
-	 * 
-	 * Atualiza a descricao do tipo.
-	 * 
-	 * @param descricao nova do item
-	 */
-	
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
 
-	/**
-	 * 
-	 * Retorna a quantidade de itens.
-	 * 
-	 * @return quantidade de itens
-	 */
-	
-	public int getQuantidade() {
-		return quantidade;
-	}
 
-	/**
-	 * 
-	 * Atualiza a quantidade do tipo.
-	 * 
-	 * @param quantidade nova do item
-	 */
-	
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}
-
-	/**
-	 * 
-	 * Retorna as Tags do item.
-	 * 
-	 * @return id do item
-	 */
-	
 	public String[] getTags() {
 		return tags;
 	}
-	
-	/**
-	 * 
-	 * Atualiza as tags do tipo.
-	 * 
-	 * @param tags novas do item
-	 */
 
 	public void setTags(String[] tags) {
 		this.tags = tags;
 	}
 
-	/**
-	 * 
-	 * Retorna o Usuario do item.
-	 * 
-	 * @return usuario do item
-	 */
-	
-	public String getIdDoador() {
-		return idDoador;
+	public String getIdDonation() {
+		return idDonation;
 	}
 
-	/**
-	 * 
-	 * Atualiza o Usuario do tipo.
-	 * 
-	 * @param Usuario novo do item
-	 */
 	
-	public void setIdDoador(String idDoador) {
-		this.idDoador = idDoador;
+	public void setIdDonation(String idDonation) {
+		this.idDonation = idDonation;
 	}
 
 	@Override
 	public String toString() {
-		return this.getId() + " - " + this.getDescricao() + ", tags: " + this.tagsEmString() +
-				", quantidade: " + this.getQuantidade() ;
+		return this.getId() + " - " + this.getDescription() + ", tags: " + this.tagsEmString() +
+				", quantidade: " + this.getAmount() ;
 	  }
 
 	private String tagsEmString() {

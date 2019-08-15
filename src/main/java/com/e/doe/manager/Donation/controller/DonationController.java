@@ -38,7 +38,7 @@ public class DonationController {
 		return DonationRepository.findAll();
 	}
 	
-	@ApiOperation(value = "Get a Donations")
+	@ApiOperation(value = "Get a Donation")
 	@GetMapping({"/{id}/", "/{id}"})
 	public Donation getDonation(@PathVariable(value="id") long id){
 		return DonationRepository.findById(id);
@@ -52,14 +52,14 @@ public class DonationController {
 
 	@ApiOperation(value="Delete a donation")
 	@DeleteMapping({"/{id}/", "/{id}"})
-	public void deletaDonation(@PathVariable(value="id") long id) {
+	public void deleteDonation(@PathVariable(value="id") long id) {
 		Donation donation =  DonationRepository.findById(id);
 		DonationRepository.delete(donation);
 	}
 	
 	@ApiOperation(value="Updates a donation")
 	@PutMapping({"/{id}/", "/{id}"})
-	public Donation atualizaDonation(@RequestBody @Valid Donation donation) {
+	public Donation updateDonation(@RequestBody @Valid Donation donation) {
 		return DonationRepository.save(donation);
 	}
 }

@@ -36,71 +36,62 @@ public class ItemController {
 	ItemRepository itemRepository;
 	UsuarioRepository usuarioRepository;
 	
-	@ApiOperation(value="Retorna uma lista de itens")
-	@GetMapping("/itens")
-	public String getItens(){
+	@ApiOperation(value="Get All itens")
+	@GetMapping({"/", ""})
+	public String getItems(){
 		
-		List<Item> itens =  itemRepository.findAll();
+		List<Item> items =  itemRepository.findAll();
 		
-		String Itens = "";
+		String Items = "";
 
-		for (Item item : itens) {
-			Itens += item.toString() ;
+		for (Item item : items) {
+			Items += item.toString() ;
 					//+ ", " + this.getUsuarioIdentificacao(item.getIdDoador()) + " | ";
 		}
 
-		Itens += itens.get(itens.size() - 1).toString();
-		return Itens;
+		Items += items.get(items.size() - 1).toString();
+		return Items;
 	}
 	
-	@ApiOperation(value="Retorna um item unico")
-	@GetMapping("/item/{id}")
+	@ApiOperation(value="Get a Item")
+	@GetMapping({"/{id}/", "/{id}"})
 	public String getItem(@PathVariable(value="id") long id){
 		return itemRepository.findById(id).toString();
 	}
 	
-	@ApiOperation(value="Adicionando descritor")
-	@PostMapping("/descritor")
-	public Item postDescricao(@RequestBody @Valid Item item) {
-		
-		String descricao = item.getDescricao();
-		item.setDescricao(descricao.toLowerCase());				
-		
-		return itemRepository.save(item);
-	}
 	
-	@ApiOperation(value="Adicionando itens")
-	@PostMapping("/item")
+	@ApiOperation(value="Create a Item")
+	@PostMapping({"/", ""})
 	public Item postItem(@RequestBody @Valid Item item) {
 
 		return itemRepository.save(item);
 	}
 
-	@ApiOperation(value="Deleta um item")
-	@DeleteMapping("/item/{id}")
-	public void deletaitem(@PathVariable(value="id") long id) {
+	@ApiOperation(value="Delete a item")
+	@DeleteMapping({"/{id}/", "/{id}"})
+	public void deleteItem(@PathVariable(value="id") long id) {
 		Item item =  itemRepository.findById(id);
 		itemRepository.delete(item);
 	}
 	
-	@ApiOperation(value="Atualiza um item")
-	@PutMapping("/item/{id}")
-	public Item atualizaitem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
+	@ApiOperation(value="Update a item")
+	@PutMapping({"/{id}/", "/{id}"})
+	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
 		Item existingItem =  itemRepository.findById(id);
 		if (!(item.getTags() == null) && !(item.getTags().length == 0)) {
 			existingItem.setTags(item.getTags());
 		}
 		
-		if ((item.getQuantidade() > 0)) {
-			existingItem.setQuantidade(item.getQuantidade());
+		if ((item.getAmount() > 0)) {
+			existingItem.setAmount(item.getAmount());
 		}
 
 		return itemRepository.save(existingItem);
 	}
 	
-	public String getUsuarioIdentificacao(String idDoador) {
-		Usuario usuario = this.usuarioRepository.findById(idDoador);
-	    return usuario.getStatus() + ": " + usuario.getIdentificacao();
+	public String getUsuarioIdentificacao(String idDonation) {
+		Usuario user = this.usuarioRepository.findById(idDonation);
+	    return user.getStatus() + ": " + user.getIdentificacao();
 	}
 }
