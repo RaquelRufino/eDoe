@@ -19,16 +19,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.e.doe.manager.item.models.Item;
 import com.e.doe.manager.usuario.models.Usuario;
 import com.e.doe.manager.usuario.repositories.UsuarioRepository;
+import com.e.doe.manager.utils.RestConstants;
 import com.e.doe.manager.item.repositories.ItemRepository;
 
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
-@RequestMapping(value="/edoe")
-@Api(value="API REST eDoe")
+@RequestMapping(value = RestConstants.ITEM_URI)
+@Api(tags = "Item")
 public class ItemController {
 	
 	@Autowired

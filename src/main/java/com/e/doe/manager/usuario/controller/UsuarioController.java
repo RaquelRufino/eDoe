@@ -3,6 +3,7 @@ package com.e.doe.manager.usuario.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,15 +20,17 @@ import com.e.doe.manager.usuario.repositories.UsuarioRepository;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import com.e.doe.manager.utils.RestConstants;
+
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-@CrossOrigin(origins = "*")
+@CrossOrigin
 @RestController
-@RequestMapping(value="/edoe")
-@Api(value="API REST eDoe")
+@RequestMapping(value = RestConstants.USUARIO_URI)
+@Api(tags = "Usuario")
 public class UsuarioController {
 	
 	@Autowired
