@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,41 +32,70 @@ public class DonationController {
 	
 	private DonationService donationService;
 	
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
+
+	
 	@Autowired
 	public DonationController(DonationService donationService) {
+		
 		this.donationService = donationService;
 	}
 	
 	@ApiOperation(value = "Get All Donations")
 	@GetMapping({"/", ""})
 	public List<Donation> getDonations(){
+		
+		LOGGER.info("get Donation");
+
 		return donationService.getDonations();
 	}
 	
 	@ApiOperation(value = "Get a Donation")
 	@GetMapping({"/{id}/", "/{id}"})
 	public Donation getDonation(@PathVariable(value="id") long id){
+		
+		LOGGER.info("get donation: " + id);
+
 		return donationService.getDonation(id);
 	}
 	
 	@ApiOperation(value="Create a Donation")
 	@PostMapping({"/", ""})
 	public Donation postDonation(@RequestBody @Valid Donation donation) {
-		return donationService.postDonation(donation);
+		
+		LOGGER.info("trying create donation");
+		
+		Donation newDonation = donationService.postDonation(donation);
+		
+		LOGGER.info("Donation created");
+		
+		return newDonation;
 	}
 
 	@ApiOperation(value="Delete a donation")
 	@DeleteMapping({"/{id}/", "/{id}"})
 	public ResponseEntity<?> deleteDonation(@PathVariable(value="id") long id) {
 		
+		LOGGER.info("trying delete Donation: " + id);
+
 		donationService.deleteDonation(id);
+		
+		LOGGER.info("Donation " + id + " deleted");
+
 		return ResponseEntity.ok().build();
 
 	}
 	
 	@ApiOperation(value="Update a donation")
 	@PutMapping({"/{id}/", "/{id}"})
-	public Donation updateDonation(@RequestBody @Valid Donation donation) {
-		return donationService.updateDonation(donation);
+	public Donation updateDonation(@RequestBody @Valid Donation donation, @PathVariable(value="id") long id) {
+		
+		LOGGER.info("trying update Donation: " + id);
+		
+		Donation donationUpdate = donationService.updateDonation(donation, id);
+		
+		LOGGER.info("Donation " + id + " update");
+
+		return donationUpdate;
 	}
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.e.doe.manager.donatedItem.DonatedItem;
+
 
 @Service
 public class DonationService {
@@ -29,7 +31,9 @@ public class DonationService {
 		donationRepository.delete(donation);
 	}
 	
-	public Donation updateDonation(Donation donation) {
+	public Donation updateDonation(Donation donation, long id) {
+		
+		//TODO
 		return donationRepository.save(donation);
 	}
 }
