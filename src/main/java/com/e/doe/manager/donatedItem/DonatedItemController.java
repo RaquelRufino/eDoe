@@ -2,6 +2,8 @@ package com.e.doe.manager.donatedItem;
 
 import javax.validation.Valid;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,6 +28,7 @@ import io.swagger.annotations.ApiOperation;
 public class DonatedItemController {
 	
 	private DonatedItemService donatedItemService;
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	public DonatedItemController(DonatedItemService donatedItemService) {
@@ -36,15 +39,18 @@ public class DonatedItemController {
 	@GetMapping({"/", ""})
 	public String getDonatedItems(){
 		
-		String Items = this.donatedItemService.getDonatedItems();
-		return Items;
+		LOGGER.info("get DonatedItems");
+
+		return this.donatedItemService.getDonatedItems();
 		
 	}
 	
 	@ApiOperation(value="Get a Donated Item")
 	@GetMapping({"/{id}/", "/{id}"})
 	public String getDonatedItem(@PathVariable(value="id") long id){
-			
+		
+		LOGGER.info("get item: " + id);
+
 		return this.donatedItemService.getDonatedItem(id);
 	}
 	
@@ -53,14 +59,26 @@ public class DonatedItemController {
 	@PostMapping({"/", ""})
 	public DonatedItem postDonatedItem(@RequestBody @Valid DonatedItem item) {
 		
-		return this.donatedItemService.postDonatedItem(item);
+		LOGGER.info("trying create Donated Item");
+
+		DonatedItem donatedItem = this.donatedItemService.postDonatedItem(item);
+		
+		LOGGER.info("Donated Item created");
+
+		return donatedItem;
 		
 	}
 
 	@ApiOperation(value="Delete a Donated Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
 	public ResponseEntity<?> deleteDonatedItem(@PathVariable(value="id") long id) {
+		
+		LOGGER.info("trying delete Donated Item: " + id);
+
 		this.donatedItemService.deleteDonatedItem(id);
+		
+		LOGGER.info("Donated Item " + id + " deleted");
+
 		return ResponseEntity.ok().build();
 	}
 	
@@ -68,8 +86,14 @@ public class DonatedItemController {
 	@PutMapping({"/{id}/", "/{id}"})
 	public DonatedItem updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
 		
-		return this.donatedItemService.updateDonatedItem(id, item);
+		LOGGER.info("trying update Donated Item: " + id);
 
+		DonatedItem donatedItem = this.donatedItemService.updateDonatedItem(id, item); 
+		
+		LOGGER.info("Donated Item " + id + " update");
+
+		return donatedItem;
+		
 	}
 	
 
