@@ -20,7 +20,7 @@ public class DonatedItemService {
 	
 	public String getDonatedItems(){
 		
-		List<DonatedItem> items =  this.donatedItemRepository.findAll();
+		List<DonatedItem> items = donatedItemRepository.findAll();
 		
 		String Items = "";
 
@@ -35,7 +35,7 @@ public class DonatedItemService {
 	
 	public String getDonatedItem(long id){
 		
-		DonatedItem item = this.donatedItemRepository.findById(id);
+		DonatedItem item = donatedItemRepository.findById(id);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
@@ -43,13 +43,13 @@ public class DonatedItemService {
 		return item.toString();
 	}
 
-	public void postDonatedItem(DonatedItem item) {
+	public DonatedItem postDonatedItem(DonatedItem item) {
 
 //		if (item == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);
 //	}
 		
-		this.donatedItemRepository.save(item);
+		return donatedItemRepository.save(item);
 	}
 	
 	public void deleteDonatedItem(long id) {
@@ -82,7 +82,7 @@ public class DonatedItemService {
 	}
 	
 	public String getUserIdentification(String idDonation) {
-		User user = this.userRepository.findById(idDonation);
+		User user = userRepository.findById(idDonation);
 	    return user.getStatus() + ": " + user.geidentification();
 	}
 

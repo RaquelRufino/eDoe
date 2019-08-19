@@ -51,12 +51,10 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Create a Donated Item")
 	@PostMapping({"/", ""})
-	public ResponseEntity<?> postDonatedItem(@RequestBody @Valid DonatedItem item) {
+	public DonatedItem postDonatedItem(@RequestBody @Valid DonatedItem item) {
 		
-		this.donatedItemService.postDonatedItem(item);
+		return this.donatedItemService.postDonatedItem(item);
 		
-		return ResponseEntity.noContent().build();
-
 	}
 
 	@ApiOperation(value="Delete a Donated Item")
@@ -68,11 +66,10 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Update a Donated Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public ResponseEntity<?> updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
+	public DonatedItem updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
 		
-		this.donatedItemService.updateDonatedItem(id, item);
+		return this.donatedItemService.updateDonatedItem(id, item);
 
-		return ResponseEntity.noContent().build();
 	}
 	
 
