@@ -51,8 +51,8 @@ public class UserController {
 	}
 	
 	@ApiOperation(value="Get a User")
-	@GetMapping({"/{id}/", "/{id}"})
-	public User getUserById(@PathVariable(value="id") String id){
+	@GetMapping({"/id/{id}/", "/id/{id}"})
+	public String getUserById(@PathVariable(value="id") String id){
 		
 		LOGGER.info("get user: " + id);
 
@@ -60,21 +60,21 @@ public class UserController {
 	}
 	
 	@ApiOperation(value="Get a User by name")
-	@GetMapping({"/{name}/", "/{name}"})
+	@GetMapping({"/name/{name}/", "/name/{name}"})
 	public String getUsuariosByName(@PathVariable(value="name") String name){
 		
 		LOGGER.info("get user: " + name);
 
-		return userService.getUsuariosByName(name);
+		return userService.getUserByName(name);
 	}
 	
 	@ApiOperation(value="Create a User")
-	@PostMapping("/")
-	public User postUser(@RequestBody @Valid User user) {
+	@PostMapping({"/", ""})
+	public String postUser(@RequestBody @Valid User user) {
 		
 		LOGGER.info("trying create item");
 		
-		User newUser = userService.postUser(user);
+		String newUser = userService.postUser(user);
 		
 		LOGGER.info("User created");
 		
@@ -97,11 +97,11 @@ public class UserController {
 	
 	@ApiOperation(value="Update a User")
 	@PutMapping({"/{id}/", "/{id}"})
-	public User atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid User user) {
+	public String atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid User user) {
 		
 		LOGGER.info("trying update User: " + id);
 		
-		User userUpdate = userService.atualizaUsuario(id, user);
+		String userUpdate = userService.updateUser(id, user);
 		
 		LOGGER.info("User " + id + " update");
 		

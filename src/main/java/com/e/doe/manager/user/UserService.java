@@ -16,11 +16,13 @@ public class UserService {
 		return userRepository.findAll();
 	}
 	
-	public User getUserById(String id){
-		return userRepository.findById(id);
+	public String getUserById(String id){
+		User user = userRepository.findById(id);
+
+		return user.toString();
 	}
 	
-	public String getUsuariosByName(String name){
+	public String getUserByName(String name){
 
 		List<User> users = userRepository.findByName(name);
 		String st = "";
@@ -33,8 +35,10 @@ public class UserService {
 		return st;
 	}
 	
-	public User postUser(User user) {
-		return userRepository.save(user);
+	public String postUser(User user) {
+		
+		User newUser = userRepository.save(user);
+		return newUser.toString();
 	}
 
 	public void deleteUser(String id) {
@@ -42,7 +46,7 @@ public class UserService {
 		userRepository.delete(user);
 	}
 	
-	public User atualizaUsuario(String id, User user) {
+	public String updateUser(String id, User user) {
 		User existingUser =  userRepository.findById(id);
 		
 		if (!(user.getName() == null) && !(user.getName().trim().equals(""))) {
@@ -56,6 +60,8 @@ public class UserService {
 		if (!(user.getTelephone() == null) && !(user.getTelephone().trim().equals(""))) {
 			existingUser.setTelephone(user.getTelephone());
 		}
-		return userRepository.save(existingUser);
+		
+		User updaterUser = userRepository.save(existingUser);
+		return updaterUser.toString();
 	}
 }
