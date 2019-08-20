@@ -30,6 +30,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(tags = "Donation")
 public class DonationController {
 	
+	
 	private DonationService donationService;
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
@@ -45,7 +46,7 @@ public class DonationController {
 	@GetMapping({"/", ""})
 	public List<Donation> getDonations(){
 		
-		LOGGER.info("get Donation");
+		LOGGER.info("get Donations");
 
 		return donationService.getDonations();
 	}
