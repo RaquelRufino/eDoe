@@ -48,21 +48,21 @@ spring.jpa.hibernate.ddl-auto=update
 ```bash
 mvn spring-boot:run
 ```
-O aplicativo começará a ser executado em: <http://localhost:8080/>
+O aplicativo começará a ser executado em: <http://localhost:8085/>
 
 ## Rest APIs
 
 Endpoints:
 
-    GET /edoe/usuarios
+    GET /user/
     
-    POST /edoe/usuario
+    POST /user/
     
-    GET /edoe/usuario/{id}
+    GET user/{id}
     
-    PUT /edoe/usuario/{id}
+    PUT user/{id}
     
-    DELETE /edoe/usuario/{id}
+    DELETE user/{id}
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
