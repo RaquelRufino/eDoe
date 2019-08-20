@@ -42,7 +42,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Get All Items")
 	@GetMapping({"/", ""})
-	public List<Item> getItems(){
+	public String getItems(){
 			
 		LOGGER.info("get Items");
 
@@ -61,11 +61,11 @@ public class ItemController {
 	
 	@ApiOperation(value="Create a Item")
 	@PostMapping({"/", ""})
-	public Item postItem(@RequestBody @Valid Item item) {
+	public String postItem(@RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying create item");
 		
-		Item newItem = itemService.postItem(item);
+		String newItem = itemService.postItem(item);
 		
 		LOGGER.info("Item created");
 
@@ -88,11 +88,11 @@ public class ItemController {
 	
 	@ApiOperation(value="Update a Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
+	public String updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying update item: " + id);
 		
-		Item itemUpdate = itemService.updateItem(id, item);
+		String itemUpdate = itemService.updateItem(id, item);
 		
 		LOGGER.info("Item " + id + " update");
 

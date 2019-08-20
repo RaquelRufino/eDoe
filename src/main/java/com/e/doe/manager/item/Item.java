@@ -20,6 +20,14 @@ public class Item implements Serializable {
 	@Column(name = "id")
 	private long id;
 	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
 	@Column(name = "description", nullable = false)
 	private String description;
 	
@@ -29,5 +37,10 @@ public class Item implements Serializable {
 		
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	@Override
+	public String toString() {
+		return this.getId() + " - " + this.getDescription();
 	}
 }

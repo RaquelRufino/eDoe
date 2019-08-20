@@ -23,13 +23,14 @@ public class DonatedItemService {
 		List<DonatedItem> items = donatedItemRepository.findAll();
 		
 		String Items = "";
-
-		for (DonatedItem item : items) {
-			Items += item.toString() ;
-					//+ ", " + this.getUsuarioIdentificacao(item.getIdDoador()) + " | ";
+		
+		for(int i= 0; i < items.size() - 1; i++) {
+			Items += items.get(i).toString()
+					+ ", " + this.getUserIdentification(items.get(i).getIdDonation()) + " |\n";
 		}
-
-		Items += items.get(items.size() - 1).toString();
+		
+		int lastItem = items.size() - 1;
+		Items += items.get(lastItem).toString() + ", " + this.getUserIdentification(items.get(lastItem).getIdDonation());
 		return Items;
 	}
 	

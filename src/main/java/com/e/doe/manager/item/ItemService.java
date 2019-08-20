@@ -14,10 +14,21 @@ public class ItemService {
 	private ItemRepository itemRepository;
 	
 	
-	public List<Item> getItems(){
+	public String getItems(){
 		
-		List<Item> items = itemRepository.findAll();		
-		return items;
+		List<Item> items = itemRepository.findAll();
+		
+		String Items = "";
+		
+		for(int i= 0; i < items.size() - 1; i++) {
+			Items += items.get(i).toString()
+					 + " |\n";
+		}
+		
+		int lastItem = items.size() - 1;
+		Items += items.get(lastItem).toString();
+		
+		return Items;
 	}
 	
 	public String getItem(long id){
@@ -25,9 +36,9 @@ public class ItemService {
 	}
 	
 	
-	public Item postItem(Item item) {
+	public String postItem(Item item) {
 
-		return itemRepository.save(item);
+		return itemRepository.save(item).toString();
 	}
 
 	
@@ -36,9 +47,11 @@ public class ItemService {
 		itemRepository.delete(item);
 	}
 	
-	public Item updateItem(long id, Item item) {
+	public String updateItem(long id, Item item) {
 		
 		Item existingItem =  itemRepository.findById(id);
-		return itemRepository.save(existingItem);
+		
+		existingItem.setDescription(item.getDescription());
+		return itemRepository.save(existingItem).toString();
 	}
 }
