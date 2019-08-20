@@ -1,6 +1,8 @@
 package com.e.doe.manager.user;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -30,6 +32,8 @@ import javax.validation.Valid;
 public class UserController {
 	
 	private UserService userService;
+	
+	private final Logger LOGGER = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	public UserController(UserService userService) {
@@ -40,18 +44,26 @@ public class UserController {
 	@ApiOperation(value="Get All Users")
 	@GetMapping({"/", ""})
 	public List<User> getUsers(){
+		
+		LOGGER.info("get Users");
+
 		return userService.getUsers();
 	}
 	
 	@ApiOperation(value="Get a User")
 	@GetMapping({"/{id}/", "/{id}"})
 	public User getUserById(@PathVariable(value="id") String id){
+		
+		LOGGER.info("get user: " + id);
+
 		return userService.getUserById(id);
 	}
 	
 	@ApiOperation(value="Get a User by name")
 	@GetMapping({"/{name}/", "/{name}"})
 	public String getUsuariosByName(@PathVariable(value="name") String name){
+		
+		LOGGER.info("get user: " + name);
 
 		return userService.getUsuariosByName(name);
 	}
@@ -59,14 +71,26 @@ public class UserController {
 	@ApiOperation(value="Create a User")
 	@PostMapping("/")
 	public User postUser(@RequestBody @Valid User user) {
-		return userService.postUser(user);
+		
+		LOGGER.info("trying create item");
+		
+		User newUser = userService.postUser(user);
+		
+		LOGGER.info("User created");
+		
+		return newUser;
 	}
 
 	@ApiOperation(value="Delete a User")
 	@DeleteMapping({"/{id}/", "/{id}"})
 	public ResponseEntity<?> deleteUser(@PathVariable(value="id") String id) {
+		
+		LOGGER.info("trying delete user: " + id);
+
 		userService.deleteUser(id);
 		
+		LOGGER.info("User " + id + " deleted");
+
 		return ResponseEntity.ok().build();
 		
 	}
@@ -75,7 +99,13 @@ public class UserController {
 	@PutMapping({"/{id}/", "/{id}"})
 	public User atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid User user) {
 		
-		return userService.atualizaUsuario(id, user);
+		LOGGER.info("trying update User: " + id);
+		
+		User userUpdate = userService.atualizaUsuario(id, user);
+		
+		LOGGER.info("User " + id + " update");
+		
+		return userUpdate;
 	}
 
 
