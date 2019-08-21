@@ -59,15 +59,15 @@ has permissions to access.
 
 ### Donated Item
 
-    * [Show Accessible Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem`
-    
-    * [Create Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
-    
-    * [Show An Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
-    
-    * [Update An Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
-  
-    * [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
+* [Show Accessible Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem`
+
+* [Create Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
+
+* [Show An Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
+
+* [Update An Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
+
+* [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
     
 ### user
 
