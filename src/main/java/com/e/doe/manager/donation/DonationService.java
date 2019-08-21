@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.e.doe.manager.donatedItem.DonatedItem;
-
+import com.e.doe.manager.user.User;
+import com.e.doe.manager.user.UserRepository;
 
 @Service
 public class DonationService {
@@ -14,16 +14,34 @@ public class DonationService {
 	@Autowired
 	private DonationRepository donationRepository;
 	
-	public List<Donation> getDonations(){
-		return donationRepository.findAll();
+	@Autowired
+	private UserRepository userRepository;
+	
+	public String getDonations(){
+		List<Donation> donationsList = donationRepository.findAll();
+		
+		String donations = "";
+		
+		if (donationsList.size() > 0) {
+			for(int i= 0; i < donationsList.size() - 1; i++) {
+				donations += donationsList.get(i).toString()
+						+ ", " + this.getUserIdentification(donationsList.get(i).getIdDonation()) 
+						+ ", " + this.getUserIdentification(donationsList.get(i).getIdReceptor()) 
+						+ " |\n";
+			}
+		
+			int lastItem = donationsList.size() - 1;
+			donations += donationsList.get(lastItem).toString() + ", " + this.getUserIdentification(donationsList.get(lastItem).getIdDonation());
+		}
+		return donations;
 	}
 	
-	public Donation getDonation(long id){
-		return donationRepository.findById(id);
+	public String getDonation(long id){
+		return donationRepository.findById(id).toString();
 	}
 	
-	public Donation postDonation(Donation donation) {
-		return donationRepository.save(donation);
+	public String postDonation(Donation donation) {
+		return donationRepository.save(donation).toString();
 	}
 	
 	public void deleteDonation(long id) {
@@ -31,9 +49,14 @@ public class DonationService {
 		donationRepository.delete(donation);
 	}
 	
-	public Donation updateDonation(Donation donation, long id) {
+	public String updateDonation(Donation donation, long id) {
 		
 		//TODO
-		return donationRepository.save(donation);
+		return donationRepository.save(donation).toString();
+	}
+	
+	public String getUserIdentification(String idDonation) {
+		User user = userRepository.findById(idDonation);
+	    return user.getStatus() + ": " + user.geidentification();
 	}
 }

@@ -19,15 +19,16 @@ public class ItemService {
 		List<Item> items = itemRepository.findAll();
 		
 		String Items = "";
-		
-		for(int i= 0; i < items.size() - 1; i++) {
-			Items += items.get(i).toString()
-					 + " |\n";
+		if (items.size() > 0) {
+				
+			for(int i= 0; i < items.size() - 1; i++) {
+				Items += items.get(i).toString()
+						 + " |\n";
+			}
+			
+			int lastItem = items.size() - 1;
+			Items += items.get(lastItem).toString();
 		}
-		
-		int lastItem = items.size() - 1;
-		Items += items.get(lastItem).toString();
-		
 		return Items;
 	}
 	

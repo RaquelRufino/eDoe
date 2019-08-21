@@ -27,11 +27,13 @@ public class UserService {
 		List<User> users = userRepository.findByName(name);
 		String st = "";
 		
-		for (int i = 0; i < users.size() - 1; i++) {
-			st += users.get(i).toString() + " | ";
+		if (users.size() > 0 ) {
+			for (int i = 0; i < users.size() - 1; i++) {
+				st += users.get(i).toString() + " | ";
+			}
+	
+			st += users.get(users.size() - 1).toString();
 		}
-
-		st += users.get(users.size() - 1).toString();
 		return st;
 	}
 	

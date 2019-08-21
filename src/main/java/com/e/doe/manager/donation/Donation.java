@@ -93,5 +93,9 @@ public class Donation implements Serializable {
 	public void setIdReceptor(String idReceptor) {
 		this.idReceptor = idReceptor;
 	}
-
+	
+	@Override
+	public String toString() {
+		return this.getDate() + " - item: " + this.getDescription() + ", quantidade: " + this.getAmount();
+	}
 }

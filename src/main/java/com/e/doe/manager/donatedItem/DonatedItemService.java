@@ -24,6 +24,7 @@ public class DonatedItemService {
 		
 		String Items = "";
 		
+		if (items.size() > 0 ) {
 		for(int i= 0; i < items.size() - 1; i++) {
 			Items += items.get(i).toString()
 					+ ", " + this.getUserIdentification(items.get(i).getIdDonation()) + " |\n";
@@ -31,6 +32,7 @@ public class DonatedItemService {
 		
 		int lastItem = items.size() - 1;
 		Items += items.get(lastItem).toString() + ", " + this.getUserIdentification(items.get(lastItem).getIdDonation());
+		}
 		return Items;
 	}
 	
