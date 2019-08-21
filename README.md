@@ -54,15 +54,47 @@ O aplicativo começará a ser executado em: <http://localhost:8085/>
 
 Endpoints:
 
-    GET /user/
+    GET /edoe/donateditem
     
-    POST /user/
+    POST /edoe/donateditem
     
-    GET user/{id}
+    GET /edoe/donateditem{id}
     
-    PUT user/{id}
+    PUT /edoe/donateditem{id}
     
-    DELETE user/{id}
+    DELETE /edoe/donateditem{id}
+    
+    GET edoe/user/
+    
+    POST edoe/user/
+    
+    GET edoe/user/id/{id}
+    
+    GET edoe/user/name/{name}
+    
+    PUT edoe/user/{id}
+    
+    DELETE edoe/user//{id}
+        
+    GET /edoe/item
+    
+    POST /edoe/item
+    
+    GET /edoe/item/{id}
+    
+    PUT /edoe/item/{id}
+    
+    DELETE /edoe/item/{id}    
+       
+    GET /edoe/donation
+    
+    POST /edoe/donation
+    
+    GET /edoe/donation{id}
+    
+    PUT /edoe/donation{id}
+    
+    DELETE /edoe/donation{id}
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
