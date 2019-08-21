@@ -50,19 +50,62 @@ mvn spring-boot:run
 ```
 O aplicativo começará a ser executado em: <http://localhost:8085/>
 
-## Rest APIs
+# RESTAPIDocs
 
-Endpoints:
+## Endpoints
 
-    GET /user/
+Endpoints for viewing and manipulating the Donations that the Authenticated User
+has permissions to access.
+
+### Donated Item
+
+    * [Show Accessible Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem`
     
-    POST /user/
+    * [Create Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
     
-    GET user/{id}
+    * [Show An Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
     
-    PUT user/{id}
+    * [Update An Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
+  
+    * [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
     
-    DELETE user/{id}
+### user
+
+    GET edoe/user/
+    
+    POST edoe/user/
+    
+    GET edoe/user/id/{id}
+    
+    GET edoe/user/name/{name}
+    
+    PUT edoe/user/{id}
+    
+    DELETE edoe/user/{id}
+    
+### item
+        
+    GET /edoe/item
+    
+    POST /edoe/item
+    
+    GET /edoe/item/{id}
+    
+    PUT /edoe/item/{id}
+    
+    DELETE /edoe/item/{id}
+    
+### donation
+       
+    GET /edoe/donation
+    
+    POST /edoe/donation
+    
+    GET /edoe/donation/{id}
+    
+    PUT /edoe/donation/{id}
+    
+    DELETE /edoe/donation/{id}
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
