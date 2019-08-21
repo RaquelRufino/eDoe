@@ -50,7 +50,7 @@ mvn spring-boot:run
 ```
 O aplicativo começará a ser executado em: <http://localhost:8085/>
 
-# RESTAPIDocs
+# REST API Docs
 
 ## Endpoints
 
@@ -69,43 +69,43 @@ has permissions to access.
 
 * [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
     
-### user
+### User
 
-    GET edoe/user/
-    
-    POST edoe/user/
-    
-    GET edoe/user/id/{id}
-    
-    GET edoe/user/name/{name}
-    
-    PUT edoe/user/{id}
-    
-    DELETE edoe/user/{id}
-    
-### item
-        
-    GET /edoe/item
-    
-    POST /edoe/item
-    
-    GET /edoe/item/{id}
-    
-    PUT /edoe/item/{id}
-    
-    DELETE /edoe/item/{id}
-    
-### donation
-       
-    GET /edoe/donation
-    
-    POST /edoe/donation
-    
-    GET /edoe/donation/{id}
-    
-    PUT /edoe/donation/{id}
-    
-    DELETE /edoe/donation/{id}
+* [Show Accessible User](docs/user/get.md) : `GET /edoe/user/`
+
+* [Create User](docs/user/post.md) : `POST /edoe/user/`
+
+* [Show User by id](docs/user/get.md) : `GET /edoe/user/id/{id}`
+
+* [Show User by name](docs/user/get.md) : `GET /edoe/user/name/{name}`
+
+* [Update User](docs/user/put.md) : `PUT /edoe/user/{id}`    
+
+* [Delete User](docs/user/delete.md) : `DELETE /edoe/user/{id}`
+   
+### Item
+
+* [Show Accessible Item](docs/item/get.md) : `GET /edoe/item`
+
+* [Create Item](docs/item/post.md) : `POST /edoe/item`
+
+* [Show An Item](docs/item/get.md) : `GET /edoe/item/{id}`
+
+* [Update An Item](docs/item/put.md) : `PUT /edoe/item/{id}`    
+
+* [Delete An Item](docs/item/delete.md) : `DELETE /edoe/item/{id}`
+
+### Donation
+
+* [Show Accessible Donation](docs/donation/get.md) : `GET /edoe/donation`
+
+* [Create Donation](docs/donation/post.md) : `POST /edoe/donation`
+
+* [Show An Donation](docs/donation/get.md) : `GET /edoe/donation/{id}`
+
+* [Update An Donation](docs/donation/put.md) : `PUT /edoe/donation/{id}`    
+
+* [Delete An Donation](docs/donation/delete.md) : `DELETE /edoe/donation/{id}`
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
