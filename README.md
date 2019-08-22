@@ -8,6 +8,7 @@
 
 #### [Especificação original](https://docs.google.com/document/d/e/2PACX-1vST2TI5lDbtMlv8rhFYJkYnrfgqzyWDv6DDvvAajz3_KK4tAs_UnAbYdI6oeMQA6jEHo5HwUAatHmd8/pub)
 
+#### [Diagrama de Componentes](docs/diagrama.png)
 ### Pré Requisitos:
 
 Os itens a seguir devem ser instalados no seu sistema:
