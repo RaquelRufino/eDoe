@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.e.doe.manager.donatedItem.DonatedItem;
 import com.e.doe.manager.donatedItem.DonatedItemRepository;
+import com.e.doe.manager.requiredItem.RequiredItem;
+import com.e.doe.manager.requiredItem.RequiredItemRepository;
 import com.e.doe.manager.user.User;
 import com.e.doe.manager.user.UserRepository;
 
@@ -23,6 +25,9 @@ public class DonationService {
 	
 	@Autowired
 	private DonatedItemRepository donatedItemRepository;
+	
+	@Autowired
+	private RequiredItemRepository requiredItemRepository;
 	
 	public String getDonations(){
 		List<Donation> donationsList = donationRepository.findAll();
@@ -41,10 +46,18 @@ public class DonationService {
 		
 		DonatedItem itemDona = donatedItemRepository.findByDescriptionAndIdDonation(donation.getDescription(), donation.getIdDonation());
 		
+		RequiredItem itemRequired = requiredItemRepository.findByDescriptionAndIdReceptor(donation.getDescription(), donation.getIdReceptor());
+
 		int donationAmount = getDonationAmount(itemDona.getAmount(), donation.getAmount());
 		
 		itemDona.setAmount(itemDona.getAmount() - donationAmount );
 		
+		donatedItemRepository.save(itemDona);
+		
+		itemRequired.setAmount(itemRequired.getAmount() - donationAmount );
+		
+		requiredItemRepository.save(itemRequired);
+
 		return donationRepository.save(donation).toString();
 	}
 	
