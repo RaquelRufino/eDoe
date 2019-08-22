@@ -16,4 +16,7 @@ public interface DonatedItemRepository extends JpaRepository<DonatedItem, Long>{
 	List<DonatedItem> findByDescription(String description);
 	
 	List<DonatedItem> findAll();
+	
+	DonatedItem findByDescriptionAndIdDonation(String description, String idDonation);
+
 }

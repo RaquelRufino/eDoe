@@ -654,3 +654,37 @@ org.postgresql.util.PSQLException: Valor inválido para tipo int : PESSOA_FISICA
 2019-08-21 21:53:22,225 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-08-21 21:53:22,239 INFO com.e.doe.manager.donatedItem.DonatedItemController [http-nio-8085-exec-2] get DonatedItems
 2019-08-21 21:53:22,242 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8085-exec-2] HHH000397: Using ASTQueryTranslatorFactory
+2019-08-21 22:32:32,929 INFO com.zaxxer.hikari.HikariDataSource [Thread-38] HikariPool-6 - Shutdown initiated...
+2019-08-21 22:32:32,948 INFO com.zaxxer.hikari.HikariDataSource [Thread-38] HikariPool-6 - Shutdown completed.
+2019-08-21 22:32:33,069 INFO com.e.doe.DoeApplication [restartedMain] Starting DoeApplication on raquel with PID 15356 (/home/paz/Documentos/github/eDoe/target/classes started by paz in /home/paz/Documentos/github/eDoe)
+2019-08-21 22:32:33,069 INFO com.e.doe.DoeApplication [restartedMain] The following profiles are active: prod
+2019-08-21 22:32:33,713 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2019-08-21 22:32:33,713 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-21 22:32:33,724 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-08-21 22:32:33,789 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-7 - Starting...
+2019-08-21 22:32:33,812 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-7 - Start completed.
+2019-08-21 22:32:33,819 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-21 22:32:33,827 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-08-21 22:32:33,872 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-08-21 22:32:33,872 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@7b63c175
+2019-08-21 22:32:34,436 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-21 22:32:34,687 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2019-08-21 22:32:34,688 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2019-08-21 22:32:34,702 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2019-08-21 22:32:34,715 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonatedItemUsingDELETE_1
+2019-08-21 22:32:34,718 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemUsingGET_1
+2019-08-21 22:32:34,720 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemsUsingGET_1
+2019-08-21 22:32:34,724 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItensUsingGET_1
+2019-08-21 22:32:34,735 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonatedItemUsingPOST_1
+2019-08-21 22:32:34,739 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonatedItemUsingPUT_1
+2019-08-21 22:32:34,745 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonationUsingDELETE_1
+2019-08-21 22:32:34,748 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationUsingGET_1
+2019-08-21 22:32:34,752 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationsUsingGET_1
+2019-08-21 22:32:34,758 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonationUsingPOST_1
+2019-08-21 22:32:34,762 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonationUsingPUT_1
+2019-08-21 22:32:34,766 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteItemUsingDELETE_1
+2019-08-21 22:32:34,771 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemUsingGET_1
+2019-08-21 22:32:34,798 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemsUsingGET_1
+2019-08-21 22:32:34,802 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postItemUsingPOST_1
