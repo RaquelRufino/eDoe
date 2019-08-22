@@ -95,7 +95,7 @@ public class RequiredItemController {
 	@PutMapping({"/{id}/", "/{id}"})
 	public String updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
 		
-		LOGGER.info("trying update Donated Item: " + id);
+		LOGGER.info("trying update Required Item: " + id);
 
 		String requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
 		
@@ -105,5 +105,17 @@ public class RequiredItemController {
 		
 	}
 	
+	@ApiOperation(value="Get matches")
+	@GetMapping({"/match/{id}/{description}/", "/match/{id}/{description}"})
+	public String getMatch(@PathVariable(value="description") String descriptionItem, @PathVariable(value="id") String idReceptor){
+		
+		LOGGER.info("trying get Match Required Item: ");
+		
+		String matches = this.requiredItemService.getMatch(descriptionItem, idReceptor); 
+		
+		LOGGER.info("Match Required Item");
+
+		return matches;
+	}
 
 }

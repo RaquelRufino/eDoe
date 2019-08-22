@@ -81,6 +81,9 @@ tem permissões para acessar.
 * [Atualizar um Required Item](docs/requireditem/put.md) : `PUT /edoe/requireditem/{id}`    
 
 * [Deletar um Required Item](docs/requireditem/delete.md) : `DELETE /edoe/requireditem/{id}`
+
+* [Identificar possiveis matches](docs/requireditem/match.md) : `GET /edoe//match/{id}/{description}`
+
     
 ### User
 

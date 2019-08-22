@@ -1,6 +1,7 @@
 package com.e.doe.manager.requiredItem;
 
 import java.util.ArrayList;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,8 +12,6 @@ import org.springframework.stereotype.Service;
 
 import com.e.doe.manager.donatedItem.DonatedItem;
 import com.e.doe.manager.donatedItem.DonatedItemRepository;
-import com.e.doe.manager.user.User;
-import com.e.doe.manager.user.UserRepository;
 
 
 @Service
@@ -20,9 +19,6 @@ public class RequiredItemService {
 	
 	@Autowired
 	private RequiredItemRepository requiredItemRepository;
-	
-	@Autowired
-	private UserRepository userRepository;
 	
 	@Autowired
 	private DonatedItemRepository donatedItemRepository;
@@ -152,13 +148,6 @@ public class RequiredItemService {
 		
 		
 		return score;
-	}
-
-
-	
-	public String getUserIdentification(String idRequired) {
-		User user = userRepository.findById(idRequired);
-	    return user.getStatus() + ": " + user.geidentification();
 	}
 	
 	
