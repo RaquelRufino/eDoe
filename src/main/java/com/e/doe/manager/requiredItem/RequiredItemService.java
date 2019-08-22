@@ -51,13 +51,13 @@ public class RequiredItemService {
 				.collect(Collectors.joining(" | "));
 	}
 
-	public RequiredItem postRequiredItem(RequiredItem item) {
+	public String postRequiredItem(RequiredItem item) {
 
 //		if (item == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);
 //	}
 		
-		return requiredItemRepository.save(item);
+		return requiredItemRepository.save(item).toString();
 	}
 	
 	public void deleteRequiredItem(long id) {
@@ -70,7 +70,7 @@ public class RequiredItemService {
 		requiredItemRepository.delete(item);
 	}
 	
-	public RequiredItem updateRequiredItem(long id, RequiredItem item) {
+	public String updateRequiredItem(long id, RequiredItem item) {
 		
 		RequiredItem existingItem = requiredItemRepository.findById(id);
 		
@@ -86,7 +86,7 @@ public class RequiredItemService {
 			existingItem.setAmount(item.getAmount());
 		}
 
-		return this.requiredItemRepository.save(existingItem);
+		return this.requiredItemRepository.save(existingItem).toString();
 	}
 	
 	public String getUserIdentification(String idRequired) {

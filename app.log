@@ -688,3 +688,351 @@ org.postgresql.util.PSQLException: Valor inválido para tipo int : PESSOA_FISICA
 2019-08-21 22:32:34,771 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemUsingGET_1
 2019-08-21 22:32:34,798 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemsUsingGET_1
 2019-08-21 22:32:34,802 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postItemUsingPOST_1
+2019-08-22 09:12:14,181 INFO com.e.doe.DoeApplication [restartedMain] Starting DoeApplication on UFCG-MacBook-Pro-1672.local with PID 51473 (/Users/tfg/Documents/github/eDoe/target/classes started by tfg in /Users/tfg/Documents/github/eDoe)
+2019-08-22 09:12:14,181 INFO com.e.doe.DoeApplication [restartedMain] The following profiles are active: prod
+2019-08-22 09:13:00,408 INFO com.e.doe.DoeApplication [restartedMain] Starting DoeApplication on UFCG-MacBook-Pro-1672.local with PID 53208 (/Users/tfg/Documents/github/eDoe/target/classes started by tfg in /Users/tfg/Documents/github/eDoe)
+2019-08-22 09:13:00,421 INFO com.e.doe.DoeApplication [restartedMain] The following profiles are active: prod
+2019-08-22 09:13:03,235 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2019-08-22 09:13:03,237 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-22 09:13:03,504 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-08-22 09:13:03,739 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2019-08-22 09:13:03,892 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2019-08-22 09:13:03,945 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-22 09:13:04,035 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-22 09:13:04,037 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2019-08-22 09:13:04,213 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-22 09:13:04,411 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-08-22 09:13:04,572 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-08-22 09:13:04,581 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@687b128f
+2019-08-22 09:13:07,174 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-22 09:13:08,228 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2019-08-22 09:13:08,248 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2019-08-22 09:13:08,322 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2019-08-22 09:13:08,444 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonatedItemUsingDELETE_1
+2019-08-22 09:13:08,451 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemUsingGET_1
+2019-08-22 09:13:08,462 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemsUsingGET_1
+2019-08-22 09:13:08,473 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItensUsingGET_1
+2019-08-22 09:13:08,541 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonatedItemUsingPOST_1
+2019-08-22 09:13:08,554 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonatedItemUsingPUT_1
+2019-08-22 09:13:08,581 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonationUsingDELETE_1
+2019-08-22 09:13:08,599 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationUsingGET_1
+2019-08-22 09:13:08,603 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationsUsingGET_1
+2019-08-22 09:13:08,611 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonationUsingPOST_1
+2019-08-22 09:13:08,616 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonationUsingPUT_1
+2019-08-22 09:13:08,623 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteItemUsingDELETE_1
+2019-08-22 09:13:08,627 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemUsingGET_1
+2019-08-22 09:13:08,629 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemsUsingGET_1
+2019-08-22 09:13:08,634 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postItemUsingPOST_1
+2019-08-22 09:13:08,638 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateItemUsingPUT_1
+2019-08-22 09:13:08,643 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteRequiredItemUsingDELETE_1
+2019-08-22 09:13:08,646 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItemUsingGET_1
+2019-08-22 09:13:08,649 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItemsUsingGET_1
+2019-08-22 09:13:08,652 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItensUsingGET_1
+2019-08-22 09:13:08,679 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postRequiredItemUsingPOST_1
+2019-08-22 09:13:08,689 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateRequiredItemUsingPUT_1
+2019-08-22 09:13:08,706 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: atualizaUsuarioUsingPUT_1
+2019-08-22 09:13:08,710 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUserUsingDELETE_1
+2019-08-22 09:13:08,713 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUserByIdUsingGET_1
+2019-08-22 09:13:08,715 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUsersUsingGET_1
+2019-08-22 09:13:08,720 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUsuariosByNameUsingGET_1
+2019-08-22 09:13:08,724 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postUserUsingPOST_1
+2019-08-22 09:13:08,850 INFO com.e.doe.DoeApplication [restartedMain] Started DoeApplication in 8.972 seconds (JVM running for 9.618)
+2019-08-22 09:13:10,945 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-22 09:13:16,865 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-3] get RequiredItems
+2019-08-22 09:13:16,914 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8085-exec-3] HHH000397: Using ASTQueryTranslatorFactory
+2019-08-22 09:14:33,140 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-6] get Users
+2019-08-22 09:15:11,231 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-8] trying create item
+2019-08-22 09:15:11,485 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8085-exec-8] SQL Error: 0, SQLState: 23502
+2019-08-22 09:15:11,486 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8085-exec-8] ERROR: null value in column "name" violates not-null constraint
+  Detail: Failing row contains (1, pessoa fisica, raquel.paz@ccc.ufcg.edu.br, null, doador, null).
+2019-08-22 09:15:11,489 ERROR org.hibernate.internal.ExceptionMapperStandardImpl [http-nio-8085-exec-8] HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-08-22 09:15:11,895 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8085-exec-8] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [name]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+org.postgresql.util.PSQLException: ERROR: null value in column "name" violates not-null constraint
+  Detail: Failing row contains (1, pessoa fisica, raquel.paz@ccc.ufcg.edu.br, null, doador, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2468)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2211)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:309)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:446)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:370)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:149)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:124)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3176)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3690)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2486)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:534)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:305)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:144)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ExposeRepositoryInvocationInterceptor.invoke(CrudMethodMetadataPostProcessor.java:364)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy109.save(Unknown Source)
+	at com.e.doe.manager.user.UserService.postUser(UserService.java:40)
+	at com.e.doe.manager.user.UserController.postUser(UserController.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-08-22 09:15:18,558 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-10] trying create item
+2019-08-22 09:15:18,562 WARN org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8085-exec-10] SQL Error: 0, SQLState: 23502
+2019-08-22 09:15:18,562 ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper [http-nio-8085-exec-10] ERROR: null value in column "telephone" violates not-null constraint
+  Detail: Failing row contains (1, pessoa fisica, raquel.paz@ccc.ufcg.edu.br, Raquel, doador, null).
+2019-08-22 09:15:18,562 ERROR org.hibernate.internal.ExceptionMapperStandardImpl [http-nio-8085-exec-10] HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-08-22 09:15:18,564 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-8085-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [telephone]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement] with root cause
+org.postgresql.util.PSQLException: ERROR: null value in column "telephone" violates not-null constraint
+  Detail: Failing row contains (1, pessoa fisica, raquel.paz@ccc.ufcg.edu.br, Raquel, doador, null).
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2468)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2211)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:309)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:446)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:370)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:149)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:124)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3176)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3690)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3290)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2486)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:104)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:534)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:305)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:144)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$ExposeRepositoryInvocationInterceptor.invoke(CrudMethodMetadataPostProcessor.java:364)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy109.save(Unknown Source)
+	at com.e.doe.manager.user.UserService.postUser(UserService.java:40)
+	at com.e.doe.manager.user.UserController.postUser(UserController.java:75)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-08-22 09:15:26,221 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-1] trying create item
+2019-08-22 09:15:26,234 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-1] User created
+2019-08-22 09:15:34,088 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-3] trying create item
+2019-08-22 09:15:34,101 INFO com.e.doe.manager.user.UserController [http-nio-8085-exec-3] User created
+2019-08-22 09:15:44,014 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-4] trying create Required Item
+2019-08-22 09:15:44,040 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-4] Required Item created
+2019-08-22 09:16:53,357 INFO com.zaxxer.hikari.HikariDataSource [Thread-6] HikariPool-1 - Shutdown initiated...
+2019-08-22 09:16:53,363 INFO com.zaxxer.hikari.HikariDataSource [Thread-6] HikariPool-1 - Shutdown completed.
+2019-08-22 09:16:53,975 INFO com.e.doe.DoeApplication [restartedMain] Starting DoeApplication on UFCG-MacBook-Pro-1672.local with PID 53208 (/Users/tfg/Documents/github/eDoe/target/classes started by tfg in /Users/tfg/Documents/github/eDoe)
+2019-08-22 09:16:53,976 INFO com.e.doe.DoeApplication [restartedMain] The following profiles are active: prod
+2019-08-22 09:16:54,753 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2019-08-22 09:16:54,754 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-22 09:16:54,760 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-08-22 09:16:54,859 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Starting...
+2019-08-22 09:16:54,872 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-2 - Start completed.
+2019-08-22 09:16:54,883 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-22 09:16:54,896 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-08-22 09:16:54,977 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-08-22 09:16:54,978 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@687b128f
+2019-08-22 09:18:35,516 INFO com.e.doe.DoeApplication [restartedMain] Starting DoeApplication on UFCG-MacBook-Pro-1672.local with PID 53259 (/Users/tfg/Documents/github/eDoe/target/classes started by tfg in /Users/tfg/Documents/github/eDoe)
+2019-08-22 09:18:35,520 INFO com.e.doe.DoeApplication [restartedMain] The following profiles are active: prod
+2019-08-22 09:18:41,398 INFO org.apache.catalina.core.StandardService [restartedMain] Starting service [Tomcat]
+2019-08-22 09:18:41,404 INFO org.apache.catalina.core.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-08-22 09:18:41,862 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2019-08-22 09:18:42,918 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2019-08-22 09:18:43,208 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2019-08-22 09:18:43,506 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-08-22 09:18:43,629 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.3.10.Final}
+2019-08-22 09:18:43,631 INFO org.hibernate.cfg.Environment [restartedMain] HHH000206: hibernate.properties not found
+2019-08-22 09:18:44,084 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
+2019-08-22 09:18:44,647 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-08-22 09:18:44,766 INFO org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl [restartedMain] HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2019-08-22 09:18:44,772 INFO org.hibernate.type.BasicTypeRegistry [restartedMain] HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@1d6b0c8
+2019-08-22 09:18:47,079 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [restartedMain] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019-08-22 09:18:47,737 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Context refreshed
+2019-08-22 09:18:47,981 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [restartedMain] Found 1 custom documentation plugin(s)
+2019-08-22 09:18:48,047 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [restartedMain] Scanning for api listing references
+2019-08-22 09:18:48,191 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonatedItemUsingDELETE_1
+2019-08-22 09:18:48,198 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemUsingGET_1
+2019-08-22 09:18:48,203 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItemsUsingGET_1
+2019-08-22 09:18:48,208 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonatedItensUsingGET_1
+2019-08-22 09:18:48,283 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonatedItemUsingPOST_1
+2019-08-22 09:18:48,291 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonatedItemUsingPUT_1
+2019-08-22 09:18:48,306 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteDonationUsingDELETE_1
+2019-08-22 09:18:48,310 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationUsingGET_1
+2019-08-22 09:18:48,315 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getDonationsUsingGET_1
+2019-08-22 09:18:48,328 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postDonationUsingPOST_1
+2019-08-22 09:18:48,390 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateDonationUsingPUT_1
+2019-08-22 09:18:48,427 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteItemUsingDELETE_1
+2019-08-22 09:18:48,435 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemUsingGET_1
+2019-08-22 09:18:48,438 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getItemsUsingGET_1
+2019-08-22 09:18:48,447 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postItemUsingPOST_1
+2019-08-22 09:18:48,469 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateItemUsingPUT_1
+2019-08-22 09:18:48,491 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteRequiredItemUsingDELETE_1
+2019-08-22 09:18:48,502 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItemUsingGET_1
+2019-08-22 09:18:48,511 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItemsUsingGET_1
+2019-08-22 09:18:48,518 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getRequiredItensUsingGET_1
+2019-08-22 09:18:48,528 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postRequiredItemUsingPOST_1
+2019-08-22 09:18:48,550 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: updateRequiredItemUsingPUT_1
+2019-08-22 09:18:48,566 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: atualizaUsuarioUsingPUT_1
+2019-08-22 09:18:48,575 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: deleteUserUsingDELETE_1
+2019-08-22 09:18:48,592 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUserByIdUsingGET_1
+2019-08-22 09:18:48,598 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUsersUsingGET_1
+2019-08-22 09:18:48,601 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: getUsuariosByNameUsingGET_1
+2019-08-22 09:18:48,647 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [restartedMain] Generating unique operation named: postUserUsingPOST_1
+2019-08-22 09:18:48,889 INFO com.e.doe.DoeApplication [restartedMain] Started DoeApplication in 14.006 seconds (JVM running for 14.688)
+2019-08-22 09:19:17,372 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8085-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-22 09:19:18,189 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-2] trying create Required Item
+2019-08-22 09:19:18,622 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-2] Required Item created
+2019-08-22 09:19:26,652 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-3] get RequiredItems
+2019-08-22 09:19:26,739 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8085-exec-3] HHH000397: Using ASTQueryTranslatorFactory

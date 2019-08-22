@@ -66,11 +66,11 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Create a Required Item")
 	@PostMapping({"/", ""})
-	public RequiredItem postRequiredItem(@RequestBody @Valid RequiredItem item) {
+	public String postRequiredItem(@RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying create Required Item");
 
-		RequiredItem requiredItem = this.requiredItemService.postRequiredItem(item);
+		String requiredItem = this.requiredItemService.postRequiredItem(item);
 		
 		LOGGER.info("Required Item created");
 
@@ -93,11 +93,11 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Update a Required Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public RequiredItem updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
+	public String updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying update Donated Item: " + id);
 
-		RequiredItem requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
+		String requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
 		
 		LOGGER.info("Required Item " + id + " update");
 

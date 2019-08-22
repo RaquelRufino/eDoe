@@ -65,11 +65,11 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Create a Donated Item")
 	@PostMapping({"/", ""})
-	public DonatedItem postDonatedItem(@RequestBody @Valid DonatedItem item) {
+	public String postDonatedItem(@RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying create Donated Item");
 
-		DonatedItem donatedItem = this.donatedItemService.postDonatedItem(item);
+		String donatedItem = this.donatedItemService.postDonatedItem(item);
 		
 		LOGGER.info("Donated Item created");
 
@@ -92,11 +92,11 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Update a Donated Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public DonatedItem updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
+	public String updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying update Donated Item: " + id);
 
-		DonatedItem donatedItem = this.donatedItemService.updateDonatedItem(id, item); 
+		String donatedItem = this.donatedItemService.updateDonatedItem(id, item); 
 		
 		LOGGER.info("Donated Item " + id + " update");
 

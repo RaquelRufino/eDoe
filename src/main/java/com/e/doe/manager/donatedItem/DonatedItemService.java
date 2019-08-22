@@ -50,13 +50,13 @@ public class DonatedItemService {
 				.collect(Collectors.joining(" | "));
 	}
 
-	public DonatedItem postDonatedItem(DonatedItem item) {
+	public String postDonatedItem(DonatedItem item) {
 
 //		if (item == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);
 //	}
 		
-		return donatedItemRepository.save(item);
+		return donatedItemRepository.save(item).toString();
 	}
 	
 	public void deleteDonatedItem(long id) {
@@ -69,7 +69,7 @@ public class DonatedItemService {
 		donatedItemRepository.delete(item);
 	}
 	
-	public DonatedItem updateDonatedItem(long id, DonatedItem item) {
+	public String updateDonatedItem(long id, DonatedItem item) {
 		
 		DonatedItem existingItem =  donatedItemRepository.findById(id);
 		
@@ -85,7 +85,7 @@ public class DonatedItemService {
 			existingItem.setAmount(item.getAmount());
 		}
 
-		return this.donatedItemRepository.save(existingItem);
+		return this.donatedItemRepository.save(existingItem).toString();
 	}
 	
 	public String getUserIdentification(String idDonation) {
