@@ -1,5 +1,7 @@
 package com.e.doe.manager.requiredItem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import java.util.stream.Collectors;
@@ -7,6 +9,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.e.doe.manager.donatedItem.DonatedItem;
+import com.e.doe.manager.donatedItem.DonatedItemRepository;
 import com.e.doe.manager.user.User;
 import com.e.doe.manager.user.UserRepository;
 
@@ -19,6 +23,10 @@ public class RequiredItemService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private DonatedItemRepository donatedItemRepository;
+
 	
 	public String getRequiredItems(){
 		
@@ -89,9 +97,69 @@ public class RequiredItemService {
 		return this.requiredItemRepository.save(existingItem).toString();
 	}
 	
+	public String getMatch(String descriptionItem, String idReceptor){
+		
+		RequiredItem itemRequired = requiredItemRepository.findByDescriptionAndIdReceptor(descriptionItem, idReceptor);
+
+		List<DonatedItem> itens = donatedItemRepository.findByDescription(descriptionItem);
+		
+		List<DonatedItem> itensMatch =  new ArrayList<>();
+	
+		if (itens.size() > 0) {
+			
+
+			for (DonatedItem i : itens) {
+				updatePontuacaoMatchDoItem(itemRequired, i);
+				if (i.getScore() > 0)
+					itensMatch.add(i);
+			}
+		}
+		
+		return itensMatch.stream()	      
+				.map(DonatedItem::toString)
+				.collect(Collectors.joining(" | "));
+		
+	}
+	
+	private void updatePontuacaoMatchDoItem(RequiredItem requiredItem, DonatedItem donatedItem) {
+		int score = 20;
+		if (donatedItem.getTags().length >= requiredItem.getTags().length) {
+			score += calculateScore(requiredItem.getTags(), donatedItem.getTags());
+		} else if (donatedItem.getTags().length < requiredItem.getTags().length) {
+			score += calculateScore(donatedItem.getTags(), requiredItem.getTags());
+		}
+		requiredItem.setScore(score);
+		
+		requiredItemRepository.save(requiredItem);
+	}
+
+	
+	private int calculateScore(String[] itemLessTags, String[] itemMoreTags) {
+		
+		int score = 0;
+		int i = 0;
+		while (itemMoreTags.length > i) {
+			if (itemLessTags.length > i) {
+				if (itemMoreTags[i].equals(itemLessTags[i]))
+					score += 10;
+				else if (Arrays.stream(itemMoreTags).anyMatch(itemLessTags[i]::equals))
+					score += 5;
+			} else if (itemLessTags.length < i) {
+				score += 5;
+			}
+			i++;
+		}
+		
+		
+		return score;
+	}
+
+
+	
 	public String getUserIdentification(String idRequired) {
 		User user = userRepository.findById(idRequired);
 	    return user.getStatus() + ": " + user.geidentification();
 	}
+	
 	
 }

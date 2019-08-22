@@ -16,5 +16,8 @@ public interface RequiredItemRepository extends JpaRepository<RequiredItem, Long
 	List<RequiredItem> findAll();
 	
 	RequiredItem findByDescriptionAndIdReceptor(String description, String idReceptor);
+	
+	List<RequiredItem> findByIdReceptor(String idReceptor);
+
 
 }

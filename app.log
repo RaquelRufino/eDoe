@@ -1036,3 +1036,5 @@ org.postgresql.util.PSQLException: ERROR: null value in column "telephone" viola
 2019-08-22 09:19:18,622 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-2] Required Item created
 2019-08-22 09:19:26,652 INFO com.e.doe.manager.requiredItem.RequiredItemController [http-nio-8085-exec-3] get RequiredItems
 2019-08-22 09:19:26,739 INFO org.hibernate.hql.internal.QueryTranslatorFactoryInitiator [http-nio-8085-exec-3] HHH000397: Using ASTQueryTranslatorFactory
+2019-08-22 10:02:31,024 INFO com.zaxxer.hikari.HikariDataSource [Thread-10] HikariPool-1 - Shutdown initiated...
+2019-08-22 10:02:31,042 INFO com.zaxxer.hikari.HikariDataSource [Thread-10] HikariPool-1 - Shutdown completed.

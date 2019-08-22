@@ -36,6 +36,25 @@ public class RequiredItem implements Serializable {
 	@Column(name = "idReceptor", nullable = false)
 	private String idReceptor;
 	
+	@Column(name = "score")
+	private int score;
+	
+	public String getIdReceptor() {
+		return idReceptor;
+	}
+
+	public void setIdReceptor(String idReceptor) {
+		this.idReceptor = idReceptor;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	public RequiredItem() {
 
 	}

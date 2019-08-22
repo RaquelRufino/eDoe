@@ -33,8 +33,19 @@ public class DonatedItem implements Serializable {
 	@Column(name = "tags", nullable = false)
 	private String[] tags;
 	
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 	@Column(name = "idDonation", nullable = false)
 	private String idDonation;
+	
+	@Column(name = "score")
+	private int score;
 	
 	public DonatedItem() {
 

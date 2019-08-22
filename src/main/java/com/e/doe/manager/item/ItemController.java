@@ -1,7 +1,5 @@
 package com.e.doe.manager.item;
 
-import java.util.List;
-
 
 import javax.validation.Valid;
 
