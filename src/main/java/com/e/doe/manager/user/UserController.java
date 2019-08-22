@@ -2,6 +2,7 @@ package com.e.doe.manager.user;
 
 
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +20,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 import com.e.doe.manager.utils.RestConstants;
-
-
-import java.util.List;
 
 import javax.validation.Valid;
 
@@ -43,7 +41,7 @@ public class UserController {
 	
 	@ApiOperation(value="Get All Users")
 	@GetMapping({"/", ""})
-	public List<User> getUsers(){
+	public String getUsers(){
 		
 		LOGGER.info("get Users");
 

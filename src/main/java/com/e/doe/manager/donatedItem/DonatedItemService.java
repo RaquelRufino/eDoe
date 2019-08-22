@@ -1,6 +1,7 @@
 package com.e.doe.manager.donatedItem;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,9 @@ public class DonatedItemService {
 		
 		List<DonatedItem> items = donatedItemRepository.findAll();
 		
-		return getStringItens(items);
+		return items.stream()	      
+				.map(DonatedItem::toString)
+				.collect(Collectors.joining(" | "));
 	}
 	
 	public String getDonatedItem(long id){
@@ -42,7 +45,9 @@ public class DonatedItemService {
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		return getStringItens(items);
+		return items.stream()	      
+				.map(DonatedItem::toString)
+				.collect(Collectors.joining(" | "));
 	}
 
 	public DonatedItem postDonatedItem(DonatedItem item) {
@@ -88,20 +93,4 @@ public class DonatedItemService {
 	    return user.getStatus() + ": " + user.geidentification();
 	}
 	
-	private String getStringItens(List<DonatedItem> items) {
-		
-		String Items = "";
-		
-		if (items.size() > 0 ) {
-		for(int i= 0; i < items.size() - 1; i++) {
-			Items += items.get(i).toString()
-					+ ", " + this.getUserIdentification(items.get(i).getIdDonation()) + " |\n";
-		}
-		
-		int lastItem = items.size() - 1;
-		Items += items.get(lastItem).toString() + ", " + this.getUserIdentification(items.get(lastItem).getIdDonation());
-		}
-		
-		return Items;
-	}
 }

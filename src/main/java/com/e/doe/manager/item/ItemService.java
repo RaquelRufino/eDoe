@@ -1,6 +1,7 @@
 package com.e.doe.manager.item;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,18 +19,9 @@ public class ItemService {
 		
 		List<Item> items = itemRepository.findAll();
 		
-		String Items = "";
-		if (items.size() > 0) {
-				
-			for(int i= 0; i < items.size() - 1; i++) {
-				Items += items.get(i).toString()
-						 + " |\n";
-			}
-			
-			int lastItem = items.size() - 1;
-			Items += items.get(lastItem).toString();
-		}
-		return Items;
+		return items.stream()	      
+					.map(Item::toString)
+					.collect(Collectors.joining(" | "));
 	}
 	
 	public String getItem(long id){

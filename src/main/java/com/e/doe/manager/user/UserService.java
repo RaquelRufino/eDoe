@@ -1,10 +1,10 @@
 package com.e.doe.manager.user;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class UserService {
@@ -12,8 +12,12 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public List<User> getUsers(){
-		return userRepository.findAll();
+	public String getUsers(){
+		List<User> users = userRepository.findAll();
+		
+		return users.stream()	      
+				.map(User::toString)
+				.collect(Collectors.joining(" | "));
 	}
 	
 	public String getUserById(String id){
@@ -25,16 +29,10 @@ public class UserService {
 	public String getUserByName(String name){
 
 		List<User> users = userRepository.findByName(name);
-		String st = "";
 		
-		if (users.size() > 0 ) {
-			for (int i = 0; i < users.size() - 1; i++) {
-				st += users.get(i).toString() + " | ";
-			}
-	
-			st += users.get(users.size() - 1).toString();
-		}
-		return st;
+		return users.stream()	      
+					.map(User::toString)
+					.collect(Collectors.joining(" | "));
 	}
 	
 	public String postUser(User user) {
