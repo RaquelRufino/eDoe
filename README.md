@@ -8,6 +8,7 @@
 
 #### [Especificação original](https://docs.google.com/document/d/e/2PACX-1vST2TI5lDbtMlv8rhFYJkYnrfgqzyWDv6DDvvAajz3_KK4tAs_UnAbYdI6oeMQA6jEHo5HwUAatHmd8/pub)
 
+#### [Diagrama de Componentes](docs/diagrama.png)
 ### Pré Requisitos:
 
 Os itens a seguir devem ser instalados no seu sistema:
@@ -50,7 +51,7 @@ mvn spring-boot:run
 ```
 O aplicativo começará a ser executado em: <http://localhost:8085/>
 
-# RESTAPIDocs
+# REST API Docs
 
 ## Endpoints
 
@@ -59,53 +60,53 @@ has permissions to access.
 
 ### Donated Item
 
-    * [Show Accessible Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem`
-    
-    * [Create Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
-    
-    * [Show An Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
-    
-    * [Update An Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
-  
-    * [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
-    
-### user
+* [Show Accessible Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem`
 
-    GET edoe/user/
+* [Create Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
+
+* [Show An Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
+
+* [Update An Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
+
+* [Delete An Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
     
-    POST edoe/user/
-    
-    GET edoe/user/id/{id}
-    
-    GET edoe/user/name/{name}
-    
-    PUT edoe/user/{id}
-    
-    DELETE edoe/user/{id}
-    
-### item
-        
-    GET /edoe/item
-    
-    POST /edoe/item
-    
-    GET /edoe/item/{id}
-    
-    PUT /edoe/item/{id}
-    
-    DELETE /edoe/item/{id}
-    
-### donation
-       
-    GET /edoe/donation
-    
-    POST /edoe/donation
-    
-    GET /edoe/donation/{id}
-    
-    PUT /edoe/donation/{id}
-    
-    DELETE /edoe/donation/{id}
+### User
+
+* [Show Accessible User](docs/user/get.md) : `GET /edoe/user/`
+
+* [Create User](docs/user/post.md) : `POST /edoe/user/`
+
+* [Show User by id](docs/user/get.md) : `GET /edoe/user/id/{id}`
+
+* [Show User by name](docs/user/get.md) : `GET /edoe/user/name/{name}`
+
+* [Update User](docs/user/put.md) : `PUT /edoe/user/{id}`    
+
+* [Delete User](docs/user/delete.md) : `DELETE /edoe/user/{id}`
+   
+### Item
+
+* [Show Accessible Item](docs/item/get.md) : `GET /edoe/item`
+
+* [Create Item](docs/item/post.md) : `POST /edoe/item`
+
+* [Show An Item](docs/item/get.md) : `GET /edoe/item/{id}`
+
+* [Update An Item](docs/item/put.md) : `PUT /edoe/item/{id}`    
+
+* [Delete An Item](docs/item/delete.md) : `DELETE /edoe/item/{id}`
+
+### Donation
+
+* [Show Accessible Donation](docs/donation/get.md) : `GET /edoe/donation`
+
+* [Create Donation](docs/donation/post.md) : `POST /edoe/donation`
+
+* [Show An Donation](docs/donation/get.md) : `GET /edoe/donation/{id}`
+
+* [Update An Donation](docs/donation/put.md) : `PUT /edoe/donation/{id}`    
+
+* [Delete An Donation](docs/donation/delete.md) : `DELETE /edoe/donation/{id}`
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
