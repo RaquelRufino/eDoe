@@ -45,15 +45,23 @@ public class DonatedItemController {
 		
 	}
 	
-	@ApiOperation(value="Get a Donated Item")
-	@GetMapping({"/{id}/", "/{id}"})
+	@ApiOperation(value="Get a Donated Item by Id")
+	@GetMapping({"/id/{id}/", "/id/{id}"})
 	public String getDonatedItem(@PathVariable(value="id") long id){
 		
-		LOGGER.info("get item: " + id);
+		LOGGER.info("get item by id: " + id);
 
 		return this.donatedItemService.getDonatedItem(id);
 	}
 	
+	@ApiOperation(value="Get Donated Itens by Description")
+	@GetMapping({"/description/{description}/", "/description/{description}"})
+	public String getDonatedItens(@PathVariable(value="description") String description){
+		
+		LOGGER.info("get itens by description: " + description);
+
+		return this.donatedItemService.getDonatedItem(description);
+	}
 	
 	@ApiOperation(value="Create a Donated Item")
 	@PostMapping({"/", ""})

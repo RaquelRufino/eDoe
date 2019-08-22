@@ -1,4 +1,4 @@
-# Aplicação Spring eDoe
+Show An Item : GET /edoe/item/{id}# Aplicação Spring eDoe
 
 <p align="center">
   <img src="https://lh6.googleusercontent.com/lT7mQse0ChZB0iMO0MMXZp_k-nTqtyfY9_FuNl7eELiVQcjRztnz5d1Iu_m39pKhGeXP8-37MfmRQlkszMDEDyjlgxSfa7_5nsbJEJjkmztA0St3wy4art8UIGekWKjQOINpxtgo" height="200" width="600"> 
@@ -90,7 +90,9 @@ has permissions to access.
 
 * [Create Item](docs/item/post.md) : `POST /edoe/item`
 
-* [Show An Item](docs/item/get.md) : `GET /edoe/item/{id}`
+* [Show An Item by id](docs/item/get.md) : `GET /edoe/item/id/{id}`
+
+* [Show Itens by description](docs/item/get.md) : `GET /edoe/item/description/{description}`
 
 * [Update An Item](docs/item/put.md) : `PUT /edoe/item/{id}`    
 

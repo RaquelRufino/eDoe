@@ -22,18 +22,7 @@ public class DonatedItemService {
 		
 		List<DonatedItem> items = donatedItemRepository.findAll();
 		
-		String Items = "";
-		
-		if (items.size() > 0 ) {
-		for(int i= 0; i < items.size() - 1; i++) {
-			Items += items.get(i).toString()
-					+ ", " + this.getUserIdentification(items.get(i).getIdDonation()) + " |\n";
-		}
-		
-		int lastItem = items.size() - 1;
-		Items += items.get(lastItem).toString() + ", " + this.getUserIdentification(items.get(lastItem).getIdDonation());
-		}
-		return Items;
+		return getStringItens(items);
 	}
 	
 	public String getDonatedItem(long id){
@@ -44,6 +33,16 @@ public class DonatedItemService {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
 		return item.toString();
+	}
+	
+	public String getDonatedItem(String description){
+		
+		List<DonatedItem> items = donatedItemRepository.findByDescription(description);
+		
+//		if (item == null) {
+//			throw new DonatedItemNotNullRuntimeException(id);
+//		}
+		return getStringItens(items);
 	}
 
 	public DonatedItem postDonatedItem(DonatedItem item) {
@@ -88,5 +87,21 @@ public class DonatedItemService {
 		User user = userRepository.findById(idDonation);
 	    return user.getStatus() + ": " + user.geidentification();
 	}
-
+	
+	private String getStringItens(List<DonatedItem> items) {
+		
+		String Items = "";
+		
+		if (items.size() > 0 ) {
+		for(int i= 0; i < items.size() - 1; i++) {
+			Items += items.get(i).toString()
+					+ ", " + this.getUserIdentification(items.get(i).getIdDonation()) + " |\n";
+		}
+		
+		int lastItem = items.size() - 1;
+		Items += items.get(lastItem).toString() + ", " + this.getUserIdentification(items.get(lastItem).getIdDonation());
+		}
+		
+		return Items;
+	}
 }
