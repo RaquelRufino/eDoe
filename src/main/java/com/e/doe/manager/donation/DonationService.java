@@ -1,6 +1,8 @@
 package com.e.doe.manager.donation;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,20 +22,10 @@ public class DonationService {
 	public String getDonations(){
 		List<Donation> donationsList = donationRepository.findAll();
 		
-		String donations = "";
-		
-		if (donationsList.size() > 0) {
-			for(int i= 0; i < donationsList.size() - 1; i++) {
-				donations += donationsList.get(i).toString()
-						+ ", " + this.getUserIdentification(donationsList.get(i).getIdDonation()) 
-						+ ", " + this.getUserIdentification(donationsList.get(i).getIdReceptor()) 
-						+ " |\n";
-			}
-		
-			int lastItem = donationsList.size() - 1;
-			donations += donationsList.get(lastItem).toString() + ", " + this.getUserIdentification(donationsList.get(lastItem).getIdDonation());
-		}
-		return donations;
+		return donationsList.stream()
+	      .sorted(Comparator.comparing(Donation::getDate).thenComparing(Donation::getDescription))
+	      .map(Donation::toString)
+	      .collect(Collectors.joining(" | "));
 	}
 	
 	public String getDonation(long id){
