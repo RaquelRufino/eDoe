@@ -43,17 +43,7 @@ public class RequiredItem implements Serializable {
 		return idReceptor;
 	}
 
-	public void setIdReceptor(String idReceptor) {
-		this.idReceptor = idReceptor;
-	}
 
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
 
 	public RequiredItem() {
 
@@ -112,6 +102,18 @@ public class RequiredItem implements Serializable {
 	
 	public void setidReceptor(String idReceptor) {
 		this.idReceptor = idReceptor;
+	}
+	
+	public void setIdReceptor(String idReceptor) {
+		this.idReceptor = idReceptor;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	@Override

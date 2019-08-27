@@ -64,11 +64,11 @@ tem permissões para acessar.
 
 * [Criar Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
 
-* [Mostrar um Donated Item](docs/donateditem/get.md) : `GET /edoe/donateditem/{id}`
+* [Mostrar um Donated Item](docs/donateditem/id/get.md) : `GET /edoe/donateditem/{id}`
 
-* [Atualizar um Donated Item](docs/donateditem/put.md) : `PUT /edoe/donateditem/{id}`    
+* [Atualizar um Donated Item](docs/donateditem/id/put.md) : `PUT /edoe/donateditem/{id}`    
 
-* [Deletar um Donated Item](docs/donateditem/delete.md) : `DELETE /edoe/donateditem/{id}`
+* [Deletar um Donated Item](docs/donateditem/id/delete.md) : `DELETE /edoe/donateditem/{id}`
 
 ### Required Item
 
@@ -76,13 +76,13 @@ tem permissões para acessar.
 
 * [Criar Required Item](docs/requireditem/post.md) : `POST /edoe/requireditem`
 
-* [Mostrar um Required Item](docs/requireditem/get.md) : `GET /edoe/requireditem/{id}`
+* [Mostrar um Required Item](docs/requireditem/id/get.md) : `GET /edoe/requireditem/{id}`
 
-* [Atualizar um Required Item](docs/requireditem/put.md) : `PUT /edoe/requireditem/{id}`    
+* [Atualizar um Required Item](docs/requireditem/id/put.md) : `PUT /edoe/requireditem/{id}`    
 
-* [Deletar um Required Item](docs/requireditem/delete.md) : `DELETE /edoe/requireditem/{id}`
+* [Deletar um Required Item](docs/requireditem/id/delete.md) : `DELETE /edoe/requireditem/{id}`
 
-* [Identificar possiveis matches](docs/requireditem/match.md) : `GET /edoe//match/{id}/{description}`
+* [Identificar possiveis matches](docs/requireditem/id/description/match.md) : `GET /edoe//match/{id}/{description}`
 
     
 ### User
@@ -91,13 +91,13 @@ tem permissões para acessar.
 
 * [Criar User](docs/user/post.md) : `POST /edoe/user/`
 
-* [Mostrar um usuario pelo id](docs/user/get.md) : `GET /edoe/user/id/{id}`
+* [Mostrar um usuario pelo id](docs/user/id/get.md) : `GET /edoe/user/id/{id}`
 
-* [Mostrar um usuario pelo name](docs/user/get.md) : `GET /edoe/user/name/{name}`
+* [Mostrar um usuario pelo name](docs/user/name/get.md) : `GET /edoe/user/name/{name}`
 
-* [Atualizar um User](docs/user/put.md) : `PUT /edoe/user/{id}`    
+* [Atualizar um User](docs/user/id/put.md) : `PUT /edoe/user/{id}`    
 
-* [Deletar um User](docs/user/delete.md) : `DELETE /edoe/user/{id}`
+* [Deletar um User](docs/user/id/delete.md) : `DELETE /edoe/user/{id}`
    
 ### Item
 
@@ -105,13 +105,13 @@ tem permissões para acessar.
 
 * [Criar Item](docs/item/post.md) : `POST /edoe/item`
 
-* [Mostrar um Item pelo id](docs/item/get.md) : `GET /edoe/item/id/{id}`
+* [Mostrar um Item pelo id](docs/item/id/get.md) : `GET /edoe/item/id/{id}`
 
-* [Mostrar Itens pela descricao](docs/item/get.md) : `GET /edoe/item/description/{description}`
+* [Mostrar Itens pela descricao](docs/item/description/get.md) : `GET /edoe/item/description/{description}`
 
-* [Atualizar um Item](docs/item/put.md) : `PUT /edoe/item/{id}`    
+* [Atualizar um Item](docs/item/id/put.md) : `PUT /edoe/item/{id}`    
 
-* [Deletar um Item](docs/item/delete.md) : `DELETE /edoe/item/{id}`
+* [Deletar um Item](docs/item/id/delete.md) : `DELETE /edoe/item/{id}`
 
 ### Donation
 
@@ -119,11 +119,11 @@ tem permissões para acessar.
 
 * [Criar Donation](docs/donation/post.md) : `POST /edoe/donation`
 
-* [Mostrar uma Donation](docs/donation/get.md) : `GET /edoe/donation/{id}`
+* [Mostrar uma Donation](docs/donation/id/get.md) : `GET /edoe/donation/{id}`
 
-* [Atualizar uma Donation](docs/donation/put.md) : `PUT /edoe/donation/{id}`    
+* [Atualizar uma Donation](docs/donation/id/put.md) : `PUT /edoe/donation/{id}`    
 
-* [Deletar uma Donation](docs/donation/delete.md) : `DELETE /edoe/donation/{id}`
+* [Deletar uma Donation](docs/donation/id/delete.md) : `DELETE /edoe/donation/{id}`
 
 
 Você pode testá-los usando o Postman ou qualquer outro rest client.
