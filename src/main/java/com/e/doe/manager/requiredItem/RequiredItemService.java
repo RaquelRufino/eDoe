@@ -84,7 +84,8 @@ public class RequiredItemService {
 		if ((item.getAmount() > 0)) {
 			existingItem.setAmount(item.getAmount());
 		}
-
+		
+		existingItem.setidReceptor(item.getidReceptor());
 		return this.requiredItemRepository.save(existingItem);
 	}
 	
