@@ -39,10 +39,6 @@ public class RequiredItem implements Serializable {
 	@Column(name = "score")
 	private int score;
 	
-	public String getIdReceptor() {
-		return idReceptor;
-	}
-
 
 
 	public RequiredItem() {
@@ -104,10 +100,6 @@ public class RequiredItem implements Serializable {
 		this.idReceptor = idReceptor;
 	}
 	
-	public void setIdReceptor(String idReceptor) {
-		this.idReceptor = idReceptor;
-	}
-
 	public int getScore() {
 		return score;
 	}

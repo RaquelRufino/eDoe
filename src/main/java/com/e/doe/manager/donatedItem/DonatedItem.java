@@ -4,7 +4,6 @@ package com.e.doe.manager.donatedItem;
 import java.io.Serializable;
 
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,14 +32,6 @@ public class DonatedItem implements Serializable {
 	@Column(name = "tags", nullable = false)
 	private String[] tags;
 	
-	public int getScore() {
-		return score;
-	}
-
-	public void setScore(int score) {
-		this.score = score;
-	}
-
 	@Column(name = "idDonation", nullable = false)
 	private String idDonation;
 	
@@ -105,6 +96,15 @@ public class DonatedItem implements Serializable {
 	public void setIdDonation(String idDonation) {
 		this.idDonation = idDonation;
 	}
+	
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
 
 	@Override
 	public String toString() {
