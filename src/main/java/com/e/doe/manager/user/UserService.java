@@ -1,7 +1,6 @@
 package com.e.doe.manager.user;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,33 +11,29 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public String getUsers(){
+	public List<User> getUsers(){
 		List<User> users = userRepository.findAll();
 		
-		return users.stream()	      
-				.map(User::toString)
-				.collect(Collectors.joining(" | "));
+		return users;
 	}
 	
-	public String getUserById(String id){
+	public User getUserById(String id){
 		User user = userRepository.findById(id);
 
-		return user.toString();
+		return user;
 	}
 	
-	public String getUserByName(String name){
+	public List<User> getUserByName(String name){
 
 		List<User> users = userRepository.findByName(name);
 		
-		return users.stream()	      
-					.map(User::toString)
-					.collect(Collectors.joining(" | "));
+		return users;
 	}
 	
-	public String postUser(User user) {
+	public User postUser(User user) {
 		
 		User newUser = userRepository.save(user);
-		return newUser.toString();
+		return newUser;
 	}
 
 	public void deleteUser(String id) {
@@ -46,7 +41,7 @@ public class UserService {
 		userRepository.delete(user);
 	}
 	
-	public String updateUser(String id, User user) {
+	public User updateUser(String id, User user) {
 		User existingUser =  userRepository.findById(id);
 		
 		if (!(user.getName() == null) && !(user.getName().trim().equals(""))) {
@@ -62,6 +57,6 @@ public class UserService {
 		}
 		
 		User updaterUser = userRepository.save(existingUser);
-		return updaterUser.toString();
+		return updaterUser;
 	}
 }

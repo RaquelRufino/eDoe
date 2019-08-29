@@ -64,7 +64,9 @@ tem permissões para acessar.
 
 * [Criar Donated Item](docs/donateditem/post.md) : `POST /edoe/donateditem`
 
-* [Mostrar um Donated Item](docs/donateditem/id/get.md) : `GET /edoe/donateditem/{id}`
+* [Mostrar um Donated Item pelo Id](docs/donateditem/id/get.md) : `GET /edoe/donateditem/findById?id=`
+
+* [Mostrar um Donated Item pela Descrição](docs/donateditem/descricao/get.md) : `GET /edoe/donateditem/findByDescription?description=`
 
 * [Atualizar um Donated Item](docs/donateditem/id/put.md) : `PUT /edoe/donateditem/{id}`    
 
@@ -76,13 +78,15 @@ tem permissões para acessar.
 
 * [Criar Required Item](docs/requireditem/post.md) : `POST /edoe/requireditem`
 
-* [Mostrar um Required Item](docs/requireditem/id/get.md) : `GET /edoe/requireditem/{id}`
+* [Mostrar um Required Item pelo id](docs/requireditem/id/get.md) : `GET /edoe/requireditem/findById?id=`
+
+* [Mostrar um Required Item pela descrição](docs/requireditem/descricao/get.md) : `GET /edoe/requireditem/findByDescription?description=`
 
 * [Atualizar um Required Item](docs/requireditem/id/put.md) : `PUT /edoe/requireditem/{id}`    
 
 * [Deletar um Required Item](docs/requireditem/id/delete.md) : `DELETE /edoe/requireditem/{id}`
 
-* [Identificar possiveis matches](docs/requireditem/id/description/match.md) : `GET /edoe//match/{id}/{description}`
+* [Identificar possiveis matches](docs/requireditem/id/description/match.md) : `GET /edoe//match?id= description=`
 
     
 ### User
@@ -91,9 +95,9 @@ tem permissões para acessar.
 
 * [Criar User](docs/user/post.md) : `POST /edoe/user/`
 
-* [Mostrar um usuario pelo id](docs/user/id/get.md) : `GET /edoe/user/id/{id}`
+* [Mostrar um usuario pelo id](docs/user/id/get.md) : `GET /edoe/user?id=`
 
-* [Mostrar um usuario pelo name](docs/user/name/get.md) : `GET /edoe/user/name/{name}`
+* [Mostrar um usuario pelo name](docs/user/name/get.md) : `GET /edoe/user/findByName?name=`
 
 * [Atualizar um User](docs/user/id/put.md) : `PUT /edoe/user/{id}`    
 

@@ -1,5 +1,7 @@
 package com.e.doe.manager.donatedItem;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.e.doe.manager.utils.RestConstants;
@@ -37,7 +40,7 @@ public class DonatedItemController {
 
 	@ApiOperation(value="Get All donated item")
 	@GetMapping({"/", ""})
-	public String getDonatedItems(){
+	public List<DonatedItem> getDonatedItems(){
 		
 		LOGGER.info("get DonatedItems");
 
@@ -46,8 +49,8 @@ public class DonatedItemController {
 	}
 	
 	@ApiOperation(value="Get a Donated Item by Id")
-	@GetMapping({"/id/{id}/", "/id/{id}"})
-	public String getDonatedItem(@PathVariable(value="id") long id){
+	@GetMapping({"/findById"})
+	public DonatedItem getDonatedItem(@RequestParam("id") long id){
 		
 		LOGGER.info("get item by id: " + id);
 
@@ -55,8 +58,8 @@ public class DonatedItemController {
 	}
 	
 	@ApiOperation(value="Get Donated Itens by Description")
-	@GetMapping({"/description/{description}/", "/description/{description}"})
-	public String getDonatedItens(@PathVariable(value="description") String description){
+	@GetMapping({"/findByDescription"})
+	public List<DonatedItem> getDonatedItens(@RequestParam("description") String description){
 		
 		LOGGER.info("get itens by description: " + description);
 
@@ -65,11 +68,11 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Create a Donated Item")
 	@PostMapping({"/", ""})
-	public String postDonatedItem(@RequestBody @Valid DonatedItem item) {
+	public DonatedItem postDonatedItem(@RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying create Donated Item");
 
-		String donatedItem = this.donatedItemService.postDonatedItem(item);
+		DonatedItem donatedItem = this.donatedItemService.postDonatedItem(item);
 		
 		LOGGER.info("Donated Item created");
 
@@ -92,11 +95,11 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Update a Donated Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public String updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
+	public DonatedItem updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying update Donated Item: " + id);
 
-		String donatedItem = this.donatedItemService.updateDonatedItem(id, item); 
+		DonatedItem donatedItem = this.donatedItemService.updateDonatedItem(id, item); 
 		
 		LOGGER.info("Donated Item " + id + " update");
 

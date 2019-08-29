@@ -2,10 +2,9 @@ package com.e.doe.manager.requiredItem;
 
 import java.util.ArrayList;
 
+
 import java.util.Arrays;
 import java.util.List;
-
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,44 +23,40 @@ public class RequiredItemService {
 	private DonatedItemRepository donatedItemRepository;
 
 	
-	public String getRequiredItems(){
+	public List<RequiredItem> getRequiredItems(){
 		
 		List<RequiredItem> items = requiredItemRepository.findAll();
 		
-		return items.stream()	      
-				.map(RequiredItem::toString)
-				.collect(Collectors.joining(" | "));
+		return items;
 	}
 	
-	public String getRequiredItem(long id){
+	public RequiredItem getRequiredItem(long id){
 		
 		RequiredItem item = requiredItemRepository.findById(id);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		return item.toString();
+		return item;
 	}
 	
-	public String getRequiredItem(String description){
+	public List<RequiredItem> getRequiredItem(String description){
 		
 		List<RequiredItem> items = requiredItemRepository.findByDescription(description);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		return items.stream()	      
-				.map(RequiredItem::toString)
-				.collect(Collectors.joining(" | "));
+		return items;
 	}
 
-	public String postRequiredItem(RequiredItem item) {
+	public RequiredItem postRequiredItem(RequiredItem item) {
 
 //		if (item == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);
 //	}
 		
-		return requiredItemRepository.save(item).toString();
+		return requiredItemRepository.save(item);
 	}
 	
 	public void deleteRequiredItem(long id) {
@@ -74,7 +69,7 @@ public class RequiredItemService {
 		requiredItemRepository.delete(item);
 	}
 	
-	public String updateRequiredItem(long id, RequiredItem item) {
+	public RequiredItem updateRequiredItem(long id, RequiredItem item) {
 		
 		RequiredItem existingItem = requiredItemRepository.findById(id);
 		
@@ -90,10 +85,10 @@ public class RequiredItemService {
 			existingItem.setAmount(item.getAmount());
 		}
 
-		return this.requiredItemRepository.save(existingItem).toString();
+		return this.requiredItemRepository.save(existingItem);
 	}
 	
-	public String getMatch(String descriptionItem, String idReceptor){
+	public List<DonatedItem> getMatch(String descriptionItem, String idReceptor){
 		
 		RequiredItem itemRequired = requiredItemRepository.findByDescriptionAndIdReceptor(descriptionItem, idReceptor);
 
@@ -111,9 +106,7 @@ public class RequiredItemService {
 			}
 		}
 		
-		return itensMatch.stream()	      
-				.map(DonatedItem::toString)
-				.collect(Collectors.joining(" | "));
+		return itensMatch;
 		
 	}
 	

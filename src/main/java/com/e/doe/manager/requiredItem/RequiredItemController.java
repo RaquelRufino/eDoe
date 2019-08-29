@@ -1,5 +1,7 @@
 package com.e.doe.manager.requiredItem;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 
@@ -15,8 +17,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.e.doe.manager.donatedItem.DonatedItem;
 import com.e.doe.manager.utils.RestConstants;
 
 import io.swagger.annotations.Api;
@@ -38,7 +42,7 @@ public class RequiredItemController {
 
 	@ApiOperation(value="Get All required item")
 	@GetMapping({"/", ""})
-	public String getRequiredItems(){
+	public List<RequiredItem> getRequiredItems(){
 		
 		LOGGER.info("get RequiredItems");
 
@@ -47,8 +51,8 @@ public class RequiredItemController {
 	}
 	
 	@ApiOperation(value="Get a Required Item by Id")
-	@GetMapping({"/id/{id}/", "/id/{id}"})
-	public String getRequiredItem(@PathVariable(value="id") long id){
+	@GetMapping({"/findById"})
+	public RequiredItem getRequiredItem(@RequestParam("id") long id){
 		
 		LOGGER.info("get required item by id: " + id);
 
@@ -56,8 +60,8 @@ public class RequiredItemController {
 	}
 	
 	@ApiOperation(value="Get Required Itens by Description")
-	@GetMapping({"/description/{description}/", "/description/{description}"})
-	public String getRequiredItens(@PathVariable(value="description") String description){
+	@GetMapping({"/findByDescription"})
+	public List<RequiredItem> getRequiredItens(@RequestParam("description") String description){
 		
 		LOGGER.info("get required itens by description: " + description);
 
@@ -66,11 +70,11 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Create a Required Item")
 	@PostMapping({"/", ""})
-	public String postRequiredItem(@RequestBody @Valid RequiredItem item) {
+	public RequiredItem postRequiredItem(@RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying create Required Item");
 
-		String requiredItem = this.requiredItemService.postRequiredItem(item);
+		RequiredItem requiredItem = this.requiredItemService.postRequiredItem(item);
 		
 		LOGGER.info("Required Item created");
 
@@ -93,11 +97,11 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Update a Required Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public String updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
+	public RequiredItem updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying update Required Item: " + id);
 
-		String requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
+		RequiredItem requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
 		
 		LOGGER.info("Required Item " + id + " update");
 
@@ -106,12 +110,12 @@ public class RequiredItemController {
 	}
 	
 	@ApiOperation(value="Get matches")
-	@GetMapping({"/match/{id}/{description}/", "/match/{id}/{description}"})
-	public String getMatch(@PathVariable(value="description") String descriptionItem, @PathVariable(value="id") String idReceptor){
+	@GetMapping({"/match"})
+	public List<DonatedItem> getMatch(@RequestParam("description") String descriptionItem,@RequestParam("id") String idReceptor){
 		
 		LOGGER.info("trying get Match Required Item: ");
 		
-		String matches = this.requiredItemService.getMatch(descriptionItem, idReceptor); 
+		List<DonatedItem> matches = this.requiredItemService.getMatch(descriptionItem, idReceptor); 
 		
 		LOGGER.info("Match Required Item");
 

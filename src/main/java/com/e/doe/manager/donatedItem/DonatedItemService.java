@@ -1,13 +1,10 @@
 package com.e.doe.manager.donatedItem;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.e.doe.manager.user.User;
-import com.e.doe.manager.user.UserRepository;
 
 
 @Service
@@ -16,47 +13,40 @@ public class DonatedItemService {
 	@Autowired
 	private DonatedItemRepository donatedItemRepository;
 	
-	@Autowired
-	private UserRepository userRepository;
-	
-	public String getDonatedItems(){
+	public List<DonatedItem> getDonatedItems(){
 		
 		List<DonatedItem> items = donatedItemRepository.findAll();
 		
-		return items.stream()	      
-				.map(DonatedItem::toString)
-				.collect(Collectors.joining(" | "));
+		return items;
 	}
 	
-	public String getDonatedItem(long id){
+	public DonatedItem getDonatedItem(long id){
 		
 		DonatedItem item = donatedItemRepository.findById(id);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		return item.toString();
+		return item;
 	}
 	
-	public String getDonatedItem(String description){
+	public List<DonatedItem> getDonatedItem(String description){
 		
 		List<DonatedItem> items = donatedItemRepository.findByDescription(description);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		return items.stream()	      
-				.map(DonatedItem::toString)
-				.collect(Collectors.joining(" | "));
+		return items;
 	}
 
-	public String postDonatedItem(DonatedItem item) {
+	public DonatedItem postDonatedItem(DonatedItem item) {
 
 //		if (item == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);
 //	}
 		
-		return donatedItemRepository.save(item).toString();
+		return donatedItemRepository.save(item);
 	}
 	
 	public void deleteDonatedItem(long id) {
@@ -69,7 +59,7 @@ public class DonatedItemService {
 		donatedItemRepository.delete(item);
 	}
 	
-	public String updateDonatedItem(long id, DonatedItem item) {
+	public DonatedItem updateDonatedItem(long id, DonatedItem item) {
 		
 		DonatedItem existingItem =  donatedItemRepository.findById(id);
 		
@@ -85,12 +75,8 @@ public class DonatedItemService {
 			existingItem.setAmount(item.getAmount());
 		}
 
-		return this.donatedItemRepository.save(existingItem).toString();
+		return this.donatedItemRepository.save(existingItem);
 	}
 	
-	public String getUserIdentification(String idDonation) {
-		User user = userRepository.findById(idDonation);
-	    return user.getStatus() + ": " + user.geidentification();
-	}
 	
 }

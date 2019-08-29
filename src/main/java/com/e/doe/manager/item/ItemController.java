@@ -1,6 +1,8 @@
 package com.e.doe.manager.item;
 
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -40,7 +42,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Get All Items")
 	@GetMapping({"/", ""})
-	public String getItems(){
+	public List<Item> getItems(){
 			
 		LOGGER.info("get Items");
 
@@ -49,7 +51,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Get a Item")
 	@GetMapping({"/{id}/", "/{id}"})
-	public String getItem(@PathVariable(value="id") long id){
+	public Item getItem(@PathVariable(value="id") long id){
 		
 		LOGGER.info("get item: " + id);
 
@@ -59,11 +61,11 @@ public class ItemController {
 	
 	@ApiOperation(value="Create a Item")
 	@PostMapping({"/", ""})
-	public String postItem(@RequestBody @Valid Item item) {
+	public Item postItem(@RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying create item");
 		
-		String newItem = itemService.postItem(item);
+		Item newItem = itemService.postItem(item);
 		
 		LOGGER.info("Item created");
 
@@ -86,11 +88,11 @@ public class ItemController {
 	
 	@ApiOperation(value="Update a Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public String updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
+	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying update item: " + id);
 		
-		String itemUpdate = itemService.updateItem(id, item);
+		Item itemUpdate = itemService.updateItem(id, item);
 		
 		LOGGER.info("Item " + id + " update");
 

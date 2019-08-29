@@ -1,7 +1,6 @@
 package com.e.doe.manager.item;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,23 +14,21 @@ public class ItemService {
 	private ItemRepository itemRepository;
 	
 	
-	public String getItems(){
+	public List<Item> getItems(){
 		
 		List<Item> items = itemRepository.findAll();
 		
-		return items.stream()	      
-					.map(Item::toString)
-					.collect(Collectors.joining(" | "));
+		return items;
 	}
 	
-	public String getItem(long id){
-		return itemRepository.findById(id).toString();
+	public Item getItem(long id){
+		return itemRepository.findById(id);
 	}
 	
 	
-	public String postItem(Item item) {
+	public Item postItem(Item item) {
 
-		return itemRepository.save(item).toString();
+		return itemRepository.save(item);
 	}
 
 	
@@ -40,11 +37,11 @@ public class ItemService {
 		itemRepository.delete(item);
 	}
 	
-	public String updateItem(long id, Item item) {
+	public Item updateItem(long id, Item item) {
 		
 		Item existingItem =  itemRepository.findById(id);
 		
 		existingItem.setDescription(item.getDescription());
-		return itemRepository.save(existingItem).toString();
+		return itemRepository.save(existingItem);
 	}
 }

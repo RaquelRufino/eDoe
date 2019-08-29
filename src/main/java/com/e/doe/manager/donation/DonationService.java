@@ -1,8 +1,6 @@
 package com.e.doe.manager.donation;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,38 +9,30 @@ import com.e.doe.manager.donatedItem.DonatedItem;
 import com.e.doe.manager.donatedItem.DonatedItemRepository;
 import com.e.doe.manager.requiredItem.RequiredItem;
 import com.e.doe.manager.requiredItem.RequiredItemRepository;
-import com.e.doe.manager.user.User;
-import com.e.doe.manager.user.UserRepository;
 
 @Service
 public class DonationService {
 
 	@Autowired
 	private DonationRepository donationRepository;
-	
-	@Autowired
-	private UserRepository userRepository;
-	
+		
 	@Autowired
 	private DonatedItemRepository donatedItemRepository;
 	
 	@Autowired
 	private RequiredItemRepository requiredItemRepository;
 	
-	public String getDonations(){
+	public List<Donation> getDonations(){
 		List<Donation> donationsList = donationRepository.findAll();
 		
-		return donationsList.stream()
-	      .sorted(Comparator.comparing(Donation::getDate).thenComparing(Donation::getDescription))
-	      .map(Donation::toString)
-	      .collect(Collectors.joining(" | "));
+		return donationsList;
 	}
 	
-	public String getDonation(long id){
-		return donationRepository.findById(id).toString();
+	public Donation getDonation(long id){
+		return donationRepository.findById(id);
 	}
 	
-	public String postDonation(Donation donation) {
+	public Donation postDonation(Donation donation) {
 		
 		DonatedItem itemDona = donatedItemRepository.findByDescriptionAndIdDonation(donation.getDescription(), donation.getIdDonation());
 		
@@ -58,7 +48,7 @@ public class DonationService {
 		
 		requiredItemRepository.save(itemRequired);
 
-		return donationRepository.save(donation).toString();
+		return donationRepository.save(donation);
 	}
 	
 	public void deleteDonation(long id) {
@@ -66,15 +56,10 @@ public class DonationService {
 		donationRepository.delete(donation);
 	}
 	
-	public String updateDonation(Donation donation, long id) {
+	public Donation updateDonation(Donation donation, long id) {
 		
 		//TODO
-		return donationRepository.save(donation).toString();
-	}
-	
-	public String getUserIdentification(String idDonation) {
-		User user = userRepository.findById(idDonation);
-	    return user.getStatus() + ": " + user.geidentification();
+		return donationRepository.save(donation);
 	}
 	
 	private int getDonationAmount(int itemNec, int donatedItem) {

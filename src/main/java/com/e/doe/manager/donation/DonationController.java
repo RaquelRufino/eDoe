@@ -1,6 +1,8 @@
 package com.e.doe.manager.donation;
 
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -42,7 +44,7 @@ public class DonationController {
 	
 	@ApiOperation(value = "Get All Donations")
 	@GetMapping({"/", ""})
-	public String getDonations(){
+	public List<Donation> getDonations(){
 		
 		LOGGER.info("get Donations");
 
@@ -51,7 +53,7 @@ public class DonationController {
 	
 	@ApiOperation(value = "Get a Donation")
 	@GetMapping({"/{id}/", "/{id}"})
-	public String getDonation(@PathVariable(value="id") long id){
+	public Donation getDonation(@PathVariable(value="id") long id){
 		
 		LOGGER.info("get donation: " + id);
 
@@ -60,11 +62,11 @@ public class DonationController {
 	
 	@ApiOperation(value="Create a Donation")
 	@PostMapping({"/", ""})
-	public String postDonation(@RequestBody @Valid Donation donation) {
+	public Donation postDonation(@RequestBody @Valid Donation donation) {
 		
 		LOGGER.info("trying create donation");
 		
-		String newDonation = donationService.postDonation(donation);
+		Donation newDonation = donationService.postDonation(donation);
 		
 		LOGGER.info("Donation created");
 		
@@ -87,11 +89,11 @@ public class DonationController {
 	
 	@ApiOperation(value="Update a donation")
 	@PutMapping({"/{id}/", "/{id}"})
-	public String updateDonation(@RequestBody @Valid Donation donation, @PathVariable(value="id") long id) {
+	public Donation updateDonation(@RequestBody @Valid Donation donation, @PathVariable(value="id") long id) {
 		
 		LOGGER.info("trying update Donation: " + id);
 		
-		String donationUpdate = donationService.updateDonation(donation, id);
+		Donation donationUpdate = donationService.updateDonation(donation, id);
 		
 		LOGGER.info("Donation " + id + " update");
 
