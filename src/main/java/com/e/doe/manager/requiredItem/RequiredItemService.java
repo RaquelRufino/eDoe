@@ -30,9 +30,9 @@ public class RequiredItemService {
 		return items;
 	}
 	
-	public RequiredItem getRequiredItem(long id){
+	public RequiredItem getRequiredItem(String idReceptor){
 		
-		RequiredItem item = requiredItemRepository.findById(id);
+		RequiredItem item = requiredItemRepository.findByIdReceptor(idReceptor);
 		
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
@@ -40,7 +40,7 @@ public class RequiredItemService {
 		return item;
 	}
 	
-	public List<RequiredItem> getRequiredItem(String description){
+	public List<RequiredItem> getRequiredItemByDescription(String description){
 		
 		List<RequiredItem> items = requiredItemRepository.findByDescription(description);
 		
@@ -59,19 +59,19 @@ public class RequiredItemService {
 		return requiredItemRepository.save(item);
 	}
 	
-	public void deleteRequiredItem(long id) {
+	public void deleteRequiredItem(String idReceptor) {
 
 //		if (item == null) {
 //			throw new DonatedItemNotNullRuntimeException(id);
 //		}
-		RequiredItem item =  requiredItemRepository.findById(id);
+		RequiredItem item =  requiredItemRepository.findByIdReceptor(idReceptor);
 		
 		requiredItemRepository.delete(item);
 	}
 	
-	public RequiredItem updateRequiredItem(long id, RequiredItem item) {
+	public RequiredItem updateRequiredItem(String idReceptor, RequiredItem item) {
 		
-		RequiredItem existingItem = requiredItemRepository.findById(id);
+		RequiredItem existingItem = requiredItemRepository.findByIdReceptor(idReceptor);
 		
 //		if (existingItem == null) {
 //		throw new DonatedItemNotNullRuntimeException(id);

@@ -52,11 +52,11 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Get a Required Item by Id")
 	@GetMapping({"/findById"})
-	public RequiredItem getRequiredItem(@RequestParam("id") long id){
+	public RequiredItem getRequiredItem(@RequestParam("id") String idReceptor){
 		
-		LOGGER.info("get required item by id: " + id);
+		LOGGER.info("get required item by id: " + idReceptor);
 
-		return this.requiredItemService.getRequiredItem(id);
+		return this.requiredItemService.getRequiredItem(idReceptor);
 	}
 	
 	@ApiOperation(value="Get Required Itens by Description")
@@ -65,7 +65,7 @@ public class RequiredItemController {
 		
 		LOGGER.info("get required itens by description: " + description);
 
-		return this.requiredItemService.getRequiredItem(description);
+		return this.requiredItemService.getRequiredItemByDescription(description);
 	}
 	
 	@ApiOperation(value="Create a Required Item")
@@ -84,26 +84,26 @@ public class RequiredItemController {
 
 	@ApiOperation(value="Delete a Required Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
-	public ResponseEntity<?> deleteRequiredItem(@PathVariable(value="id") long id) {
+	public ResponseEntity<?> deleteRequiredItem(@PathVariable(value="id") String idReceptor) {
 		
-		LOGGER.info("trying delete Required Item: " + id);
+		LOGGER.info("trying delete Required Item: " + idReceptor);
 
-		this.requiredItemService.deleteRequiredItem(id);
+		this.requiredItemService.deleteRequiredItem(idReceptor);
 		
-		LOGGER.info("Required Item " + id + " deleted");
+		LOGGER.info("Required Item " + idReceptor + " deleted");
 
 		return ResponseEntity.ok().build();
 	}
 	
 	@ApiOperation(value="Update a Required Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public RequiredItem updateRequiredItem(@PathVariable(value="id") long id, @RequestBody @Valid RequiredItem item) {
+	public RequiredItem updateRequiredItem(@PathVariable(value="id") String idReceptor, @RequestBody @Valid RequiredItem item) {
 		
-		LOGGER.info("trying update Required Item: " + id);
+		LOGGER.info("trying update Required Item: " + idReceptor);
 
-		RequiredItem requiredItem = this.requiredItemService.updateRequiredItem(id, item); 
+		RequiredItem requiredItem = this.requiredItemService.updateRequiredItem(idReceptor, item); 
 		
-		LOGGER.info("Required Item " + id + " update");
+		LOGGER.info("Required Item " + idReceptor + " update");
 
 		return requiredItem;
 		

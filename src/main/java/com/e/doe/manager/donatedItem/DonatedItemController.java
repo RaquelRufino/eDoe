@@ -50,11 +50,11 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Get a Donated Item by Id")
 	@GetMapping({"/findById"})
-	public DonatedItem getDonatedItem(@RequestParam("id") long id){
+	public DonatedItem getDonatedItem(@RequestParam("id") String idDonation){
 		
-		LOGGER.info("get item by id: " + id);
+		LOGGER.info("get item by id: " + idDonation);
 
-		return this.donatedItemService.getDonatedItem(id);
+		return this.donatedItemService.getDonatedItem(idDonation);
 	}
 	
 	@ApiOperation(value="Get Donated Itens by Description")
@@ -63,7 +63,7 @@ public class DonatedItemController {
 		
 		LOGGER.info("get itens by description: " + description);
 
-		return this.donatedItemService.getDonatedItem(description);
+		return this.donatedItemService.getDonatedItemByDescription(description);
 	}
 	
 	@ApiOperation(value="Create a Donated Item")
@@ -82,7 +82,7 @@ public class DonatedItemController {
 
 	@ApiOperation(value="Delete a Donated Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
-	public ResponseEntity<?> deleteDonatedItem(@PathVariable(value="id") long id) {
+	public ResponseEntity<?> deleteDonatedItem(@PathVariable(value="id") String id) {
 		
 		LOGGER.info("trying delete Donated Item: " + id);
 
@@ -95,7 +95,7 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Update a Donated Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	public DonatedItem updateDonatedItem(@PathVariable(value="id") long id, @RequestBody @Valid DonatedItem item) {
+	public DonatedItem updateDonatedItem(@PathVariable(value="id") String id, @RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying update Donated Item: " + id);
 

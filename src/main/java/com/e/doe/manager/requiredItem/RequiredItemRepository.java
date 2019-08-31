@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository("requiredItemRepository")
 public interface RequiredItemRepository extends JpaRepository<RequiredItem, Long>{
 
-	RequiredItem findById(long id);
+	RequiredItem findByIdReceptor(String id);
 	
 	List<RequiredItem> findByDescription(String description);
 	
@@ -17,7 +17,4 @@ public interface RequiredItemRepository extends JpaRepository<RequiredItem, Long
 	
 	RequiredItem findByDescriptionAndIdReceptor(String description, String idReceptor);
 	
-	List<RequiredItem> findByIdReceptor(String idReceptor);
-
-
 }

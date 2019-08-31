@@ -20,52 +20,55 @@ public class DonatedItemService {
 		return items;
 	}
 	
-	public DonatedItem getDonatedItem(long id){
+	public DonatedItem getDonatedItem(String idDonation){
 		
-		DonatedItem item = donatedItemRepository.findById(id);
+		DonatedItem item = donatedItemRepository.findByIdDonation(idDonation);
 		
-//		if (item == null) {
-//			throw new DonatedItemNotNullRuntimeException(id);
-//		}
+		if (item == null) {
+			throw new DonatedItemNotFoundException(idDonation);
+		}
+		
 		return item;
 	}
 	
-	public List<DonatedItem> getDonatedItem(String description){
+	public List<DonatedItem> getDonatedItemByDescription(String description){
 		
 		List<DonatedItem> items = donatedItemRepository.findByDescription(description);
 		
-//		if (item == null) {
-//			throw new DonatedItemNotNullRuntimeException(id);
-//		}
+		if (items == null) {
+			throw new DonatedItemDescriptionNotFoundException(description);
+		}
+
 		return items;
 	}
 
 	public DonatedItem postDonatedItem(DonatedItem item) {
 
-//		if (item == null) {
-//		throw new DonatedItemNotNullRuntimeException(id);
-//	}
+		if (item == null) {
+			throw new DonatedItemNullException();
+		}
 		
 		return donatedItemRepository.save(item);
 	}
 	
-	public void deleteDonatedItem(long id) {
+	public void deleteDonatedItem(String idDonation) {
 
-//		if (item == null) {
-//			throw new DonatedItemNotNullRuntimeException(id);
-//		}
-		DonatedItem item =  donatedItemRepository.findById(id);
+		DonatedItem item =  donatedItemRepository.findByIdDonation(idDonation);
+
+		if (item == null) {
+			throw new DonatedItemNotFoundException(idDonation);
+		}
 		
 		donatedItemRepository.delete(item);
 	}
 	
-	public DonatedItem updateDonatedItem(long id, DonatedItem item) {
+	public DonatedItem updateDonatedItem(String idDonation, DonatedItem item) {
 		
-		DonatedItem existingItem =  donatedItemRepository.findById(id);
+		DonatedItem existingItem =  donatedItemRepository.findByIdDonation(idDonation);
 		
-//		if (existingItem == null) {
-//		throw new DonatedItemNotNullRuntimeException(id);
-//	}
+		if (item == null) {
+			throw new DonatedItemNotFoundException(idDonation);
+		}
 		
 		if (!(item.getTags() == null) && !(item.getTags().length == 0)) {
 			existingItem.setTags(item.getTags());

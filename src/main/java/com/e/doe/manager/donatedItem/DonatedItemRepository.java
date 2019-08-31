@@ -11,7 +11,7 @@ import com.e.doe.manager.donatedItem.DonatedItem;
 @Repository("donatedItemRepository")
 public interface DonatedItemRepository extends JpaRepository<DonatedItem, Long>{
 
-	DonatedItem findById(long id);
+	DonatedItem findByIdDonation(String idDonation);
 	
 	List<DonatedItem> findByDescription(String description);
 	
