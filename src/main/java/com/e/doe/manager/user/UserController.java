@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+import com.e.doe.manager.utils.PrivilegeUtils;
 import com.e.doe.manager.utils.RestConstants;
 
 import java.util.List;
@@ -44,6 +46,7 @@ public class UserController {
 	
 	@ApiOperation(value="Get All Users")
 	@GetMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<User> getUsers(){
 		
 		LOGGER.info("get Users");
@@ -53,6 +56,7 @@ public class UserController {
 	
 	@ApiOperation(value="Get a User by id")
 	@GetMapping({"/findById"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public User getUserById(@RequestParam("id") String id){
 		
 		LOGGER.info("get user: " + id);
@@ -62,6 +66,7 @@ public class UserController {
 	
 	@ApiOperation(value="Get Users by name")
 	@GetMapping({"/findByName"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<User> getUsersByName(@RequestParam("name") String name){
 		
 		LOGGER.info("get user: " + name);
@@ -71,6 +76,7 @@ public class UserController {
 	
 	@ApiOperation(value="Create a User")
 	@PostMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public User postUser(@RequestBody @Valid User user) {
 		
 		LOGGER.info("trying create item");
@@ -84,6 +90,7 @@ public class UserController {
 
 	@ApiOperation(value="Delete a User")
 	@DeleteMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public ResponseEntity<?> deleteUser(@PathVariable(value="id") String id) {
 		
 		LOGGER.info("trying delete user: " + id);
@@ -98,6 +105,7 @@ public class UserController {
 	
 	@ApiOperation(value="Update a User")
 	@PutMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public User atualizaUsuario(@PathVariable(value="id") String id, @RequestBody @Valid User user) {
 		
 		LOGGER.info("trying update User: " + id);

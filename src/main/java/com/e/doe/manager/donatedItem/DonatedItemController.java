@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.e.doe.manager.utils.PrivilegeUtils;
 import com.e.doe.manager.utils.RestConstants;
 
 import io.swagger.annotations.Api;
@@ -40,6 +42,7 @@ public class DonatedItemController {
 
 	@ApiOperation(value="Get All donated item")
 	@GetMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<DonatedItem> getDonatedItems(){
 		
 		LOGGER.info("get DonatedItems");
@@ -50,6 +53,7 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Get a Donated Item by Id")
 	@GetMapping({"/findById"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public DonatedItem getDonatedItem(@RequestParam("id") String idDonation){
 		
 		LOGGER.info("get item by id: " + idDonation);
@@ -59,6 +63,7 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Get Donated Itens by Description")
 	@GetMapping({"/findByDescription"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<DonatedItem> getDonatedItens(@RequestParam("description") String description){
 		
 		LOGGER.info("get itens by description: " + description);
@@ -68,6 +73,7 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Create a Donated Item")
 	@PostMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public DonatedItem postDonatedItem(@RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying create Donated Item");
@@ -82,6 +88,7 @@ public class DonatedItemController {
 
 	@ApiOperation(value="Delete a Donated Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public ResponseEntity<?> deleteDonatedItem(@PathVariable(value="id") String id) {
 		
 		LOGGER.info("trying delete Donated Item: " + id);
@@ -95,6 +102,7 @@ public class DonatedItemController {
 	
 	@ApiOperation(value="Update a Donated Item")
 	@PutMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public DonatedItem updateDonatedItem(@PathVariable(value="id") String id, @RequestBody @Valid DonatedItem item) {
 		
 		LOGGER.info("trying update Donated Item: " + id);

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.e.doe.manager.utils.PrivilegeUtils;
 import com.e.doe.manager.utils.RestConstants;
 
 import io.swagger.annotations.Api;
@@ -42,6 +44,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Get All Items")
 	@GetMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<Item> getItems(){
 			
 		LOGGER.info("get Items");
@@ -51,6 +54,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Get a Item")
 	@GetMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public Item getItem(@PathVariable(value="id") long id){
 		
 		LOGGER.info("get item: " + id);
@@ -61,6 +65,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Create a Item")
 	@PostMapping({"/", ""})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public Item postItem(@RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying create item");
@@ -74,6 +79,7 @@ public class ItemController {
 
 	@ApiOperation(value="Delete a Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public ResponseEntity<?> deleteItem(@PathVariable(value="id") long id) {
 		
 		LOGGER.info("trying delete item: " + id);
@@ -88,6 +94,7 @@ public class ItemController {
 	
 	@ApiOperation(value="Update a Item")
 	@PutMapping({"/{id}/", "/{id}"})
+	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public Item updateItem(@PathVariable(value="id") long id, @RequestBody @Valid Item item) {
 		
 		LOGGER.info("trying update item: " + id);
