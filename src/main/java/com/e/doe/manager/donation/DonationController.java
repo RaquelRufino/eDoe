@@ -46,7 +46,7 @@ public class DonationController {
 	
 	@ApiOperation(value = "Get All Donations")
 	@GetMapping({"/", ""})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<Donation> getDonations(){
 		
 		LOGGER.info("get Donations");
@@ -56,7 +56,7 @@ public class DonationController {
 	
 	@ApiOperation(value = "Get a Donation")
 	@GetMapping({"/{id}/", "/{id}"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public Donation getDonation(@PathVariable(value="id") long id){
 		
 		LOGGER.info("get donation: " + id);
@@ -66,7 +66,7 @@ public class DonationController {
 	
 	@ApiOperation(value="Create a Donation")
 	@PostMapping({"/", ""})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public Donation postDonation(@RequestBody @Valid Donation donation) {
 		
 		LOGGER.info("trying create donation");
@@ -80,7 +80,7 @@ public class DonationController {
 
 	@ApiOperation(value="Delete a donation")
 	@DeleteMapping({"/{id}/", "/{id}"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public ResponseEntity<?> deleteDonation(@PathVariable(value="id") long id) {
 		
 		LOGGER.info("trying delete Donation: " + id);
@@ -95,7 +95,7 @@ public class DonationController {
 	
 	@ApiOperation(value="Update a donation")
 	@PutMapping({"/{id}/", "/{id}"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public Donation updateDonation(@RequestBody @Valid Donation donation, @PathVariable(value="id") long id) {
 		
 		LOGGER.info("trying update Donation: " + id);

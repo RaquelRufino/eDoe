@@ -44,7 +44,7 @@ public class RequiredItemController {
 
 	@ApiOperation(value="Get All required item")
 	@GetMapping({"/", ""})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<RequiredItem> getRequiredItems(){
 		
 		LOGGER.info("get RequiredItems");
@@ -55,7 +55,7 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Get a Required Item by Id")
 	@GetMapping({"/findById"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public RequiredItem getRequiredItem(@RequestParam("id") String idReceptor){
 		
 		LOGGER.info("get required item by id: " + idReceptor);
@@ -65,7 +65,7 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Get Required Itens by Description")
 	@GetMapping({"/findByDescription"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<RequiredItem> getRequiredItens(@RequestParam("description") String description){
 		
 		LOGGER.info("get required itens by description: " + description);
@@ -75,7 +75,7 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Create a Required Item")
 	@PostMapping({"/", ""})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public RequiredItem postRequiredItem(@RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying create Required Item");
@@ -90,7 +90,7 @@ public class RequiredItemController {
 
 	@ApiOperation(value="Delete a Required Item")
 	@DeleteMapping({"/{id}/", "/{id}"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public ResponseEntity<?> deleteRequiredItem(@PathVariable(value="id") String idReceptor) {
 		
 		LOGGER.info("trying delete Required Item: " + idReceptor);
@@ -104,7 +104,7 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Update a Required Item")
 	@PutMapping({"/{id}/", "/{id}"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_ADMIN + "')")
 	public RequiredItem updateRequiredItem(@PathVariable(value="id") String idReceptor, @RequestBody @Valid RequiredItem item) {
 		
 		LOGGER.info("trying update Required Item: " + idReceptor);
@@ -119,7 +119,7 @@ public class RequiredItemController {
 	
 	@ApiOperation(value="Get matches")
 	@GetMapping({"/match"})
-	@PreAuthorize("hasAuthority('" + PrivilegeUtils.PRIVILAGE_USER + "')")
+	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
 	public List<DonatedItem> getMatch(@RequestParam("description") String descriptionItem,@RequestParam("id") String idReceptor){
 		
 		LOGGER.info("trying get Match Required Item: ");
