@@ -22,7 +22,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 	
 	private final EdoeUserService edoeUserService;
 	
-	public JWTAuthorizationFilter(AuthenticationManager authenticationManager,EdoeUserService edoeUserService) {
+	public JWTAuthorizationFilter(AuthenticationManager authenticationManager, EdoeUserService edoeUserService) {
 		super(authenticationManager);
 		this.edoeUserService = edoeUserService;
 	}
@@ -49,7 +49,7 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
 		if(token == null) return null;
 		
 		String username = Jwts.parser().setSigningKey(SecurityConstants.SECRET)
-				.parseClaimsJwt(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
+				.parseClaimsJws(token.replace(SecurityConstants.TOKEN_PREFIX, ""))
 				.getBody()
 				.getSubject();
 		
