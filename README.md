@@ -56,7 +56,7 @@ O aplicativo começará a ser executado em: <http://localhost:8085/>
 Para realizar a autentição do usuário é necessário enviar no body da requisição o user e password que serão autenticados. No sucesso da autenticacão será retornado um token JWT para o usuario.
 
 ## Authorization
-Para autorização, em algumas rotas, é necessario o envio do token JWT gerado na autenticacao do usuario. O JWT tem informacoes sobre os privilegios do usuario. Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403.
+Para autorização, em algumas rotas, é necessario o envio do token JWT, gerado na autenticacao do usuario, no Authorization header da requisição. O JWT tem informacoes sobre os privilegios do usuario. Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403.
 
 # REST API Docs
 
