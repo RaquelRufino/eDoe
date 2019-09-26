@@ -53,19 +53,20 @@ O aplicativo começará a ser executado em: <http://localhost:8085/>
 
 # Authentication and Authorization
 ## Authentication
-A autenticação do usuário é feita através da rota default: `POST /login`
-Para realizar a autenticação é necessário enviar no body da requisição user e password no formato json.
-Exemplo de body enviado na requqisição: { user: "admin", password: "admin" }
-É utilizado o Bearer Authentication para geração e criptografia dos tokens, mais informações em: https://swagger.io/docs/specification/authentication/bearer-authentication/
-No sucesso da autenticacão será retornado status 202 e um Token Bearer JWT para o usuario.
+A autenticação do usuário é feita através da rota default: `POST /login`  
+Para realizar a autenticação é necessário enviar no body da requisição user e password no formato json.  
+* Exemplo de body enviado na requqisição: { user: "admin", password: "admin" }
+É utilizado o Bearer Authentication para geração e criptografia dos tokens, mais informações em:   https://swagger.io/docs/specification/authentication/bearer-authentication/
+* No sucesso da autenticacão será retornado status 202 e um Token Bearer JWT para o usuario. *
 
 
 ## Authorization
-Para autorização, em algumas rotas, é necessario o envio do Bearer Token JWT, gerado na autenticação do usuario, no Authorization header da requisição. O tokenJWT tem informacoes sobre os privilegios do usuario.
-Existem 2 tipos de usuários no sistema: Admin e User.
+Para autorização, em algumas rotas, é necessario o envio do Bearer Token JWT, gerado na autenticação do usuario, no Authorization header da requisição.  
+O tokenJWT tem informacoes sobre os privilegios do usuario.  
+### Existem 2 tipos de usuários no sistema: Admin e User
 * Exemplo de rota que checa se o usuário está logado: `GET /edoe/donateditem` [Mostrar todos Donated Itens]
-* Exemplo de rota que checa se o usuário tem privilégio de admnistrador: `DELETE /edoe/donateditem/{id}` [Deletar um Donated Item]
-Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403.
+* Exemplo de rota que checa se o usuário tem privilégio de admnistrador: `DELETE /edoe/donateditem/{id}` [Deletar um Donated Item]  
+*Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403.*
 
 
 # REST API Docs
