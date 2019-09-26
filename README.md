@@ -66,7 +66,7 @@ O tokenJWT tem informacoes sobre os privilegios do usuario.
 ### Existem 2 tipos de usuários no sistema: Admin e User
 * Exemplo de rota que checa se o usuário está logado: `GET /edoe/donateditem` [Mostrar todos Donated Itens]
 * Exemplo de rota que checa se o usuário tem privilégio de admnistrador: `DELETE /edoe/donateditem/{id}` [Deletar um Donated Item]  
-*Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403.*
+* Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403. *
 
 
 # REST API Docs
