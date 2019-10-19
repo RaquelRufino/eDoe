@@ -2,6 +2,7 @@ package com.e.doe.manager.item;
 
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.validation.Valid;
 
@@ -45,9 +46,10 @@ public class ItemController {
 	@ApiOperation(value="Get All Items")
 	@GetMapping({"/", ""})
 	@PreAuthorize("hasRole('" + PrivilegeUtils.PRIVILAGE_USER + "')")
-	public List<Item> getItems(){
+	public List<Item> getItems() throws InterruptedException{
 			
 		LOGGER.info("get Items");
+        TimeUnit.SECONDS.sleep((long) 0.5);
 
 		return itemService.getItems();
 	}
