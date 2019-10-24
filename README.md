@@ -68,6 +68,18 @@ O tokenJWT tem informacoes sobre os privilegios do usuario.
 * Exemplo de rota que checa se o usuário tem privilégio de admnistrador: `DELETE /edoe/donateditem/{id}` [Deletar um Donated Item]  
 * Caso o usuário não tenha o privilégio para acessar a rota, será retornado status 403. *
 
+# Performance and scalability
+Para garantir que a aplicação aguentará uma certa quantidade de usuários e avaliar a experiência que ele terá na aplicação verificando qual o tempo de resposta a cada iteração. Simplificando, é aquele em que submetemos o sistema a uma avaliação de carga, stress ou desempenho para avaliar se os resultados estão de acordo com o esperado, garantindo assim a qualidade do sistema.
+## JMeter
+Quando falamos em teste de performance o JMeter é a ferramenta mais utilizada para este seguimento.
+### Vazão
+
+### Tempo de resposta
+O teste de tempo de resposta, foi feito primeiro sem utilizar a abstração de cache do JMeter e depois utilizando o a biblioteca de cache do springframework.
+#### Sem cache
+
+#### Com cache
+
 
 # REST API Docs
 
