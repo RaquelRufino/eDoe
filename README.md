@@ -72,14 +72,17 @@ O tokenJWT tem informacoes sobre os privilegios do usuario.
 Para garantir que a aplicação aguentará uma certa quantidade de usuários e avaliar a experiência que ele terá na aplicação verificando qual o tempo de resposta a cada iteração. Simplificando, é aquele em que submetemos o sistema a uma avaliação de carga, stress ou desempenho para avaliar se os resultados estão de acordo com o esperado, garantindo assim a qualidade do sistema.
 ## JMeter
 Quando falamos em teste de performance o JMeter é a ferramenta mais utilizada para este seguimento.
+
 ### Vazão
+#### Gráfico JMeter
+![graph_cache](https://user-images.githubusercontent.com/20324935/67443402-17f3b000-f5db-11e9-8ba2-f29b0f3cb1ec.png)
+- Vazão: 47k por minuto / 786,2 por segundo.
 
 ### Tempo de resposta
 O teste de tempo de resposta, foi feito primeiro sem utilizar a abstração de cache do JMeter e depois utilizando o a biblioteca de cache do springframework.
 #### Sem cache
 ![response_time_graph](https://user-images.githubusercontent.com/20324935/67442910-05787700-f5d9-11e9-8ae4-5036bdfdf6ee.png)
 - Tempo médio de resposta: 1250
-
 #### Com cache
 ![response_time_graph_cache](https://user-images.githubusercontent.com/20324935/67442871-df52d700-f5d8-11e9-8443-e62035c6fbad.png)
 - Tempo médio de resposta: 1050
