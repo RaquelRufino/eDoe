@@ -77,9 +77,15 @@ Quando falamos em teste de performance o JMeter é a ferramenta mais utilizada p
 ### Tempo de resposta
 O teste de tempo de resposta, foi feito primeiro sem utilizar a abstração de cache do JMeter e depois utilizando o a biblioteca de cache do springframework.
 #### Sem cache
+![response_time_graph](https://user-images.githubusercontent.com/20324935/67442910-05787700-f5d9-11e9-8ae4-5036bdfdf6ee.png)
+- Tempo médio de resposta: 1250
 
 #### Com cache
 ![response_time_graph_cache](https://user-images.githubusercontent.com/20324935/67442871-df52d700-f5d8-11e9-8443-e62035c6fbad.png)
+- Tempo médio de resposta: 1050
+
+#### Resultados
+Esperava que com cache o tempo de resposta médio se reduzisse, e foi o que aconteceu, mesmo com um pico o tempo média de resposta com cache foi 200 milisegundos menor do que utilizando a biblioteca de cache do springframwork. 
 
 # REST API Docs
 
