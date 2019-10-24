@@ -72,7 +72,12 @@ O tokenJWT tem informacoes sobre os privilegios do usuario.
 Para garantir que a aplicação aguentará uma certa quantidade de usuários e avaliar a experiência que ele terá na aplicação verificando qual o tempo de resposta a cada iteração. Simplificando, é aquele em que submetemos o sistema a uma avaliação de carga, stress ou desempenho para avaliar se os resultados estão de acordo com o esperado, garantindo assim a qualidade do sistema.
 ## JMeter
 Quando falamos em teste de performance o JMeter é a ferramenta mais utilizada para este seguimento.
-
+### Configuração
+- Threads (Usuários): 1000
+- Tempo de inicializaçao: 1s
+- Contador de Iteração: 40
+- Sem delay
+- Sem agendador
 ### Vazão
 #### Gráfico JMeter
 ![graph_cache](https://user-images.githubusercontent.com/20324935/67443402-17f3b000-f5db-11e9-8ba2-f29b0f3cb1ec.png)
