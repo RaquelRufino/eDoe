@@ -79,7 +79,7 @@ O teste de tempo de resposta, foi feito primeiro sem utilizar a abstração de c
 #### Sem cache
 
 #### Com cache
-
+![response_time_graph_cache](https://user-images.githubusercontent.com/20324935/67442871-df52d700-f5d8-11e9-8443-e62035c6fbad.png)
 
 # REST API Docs
 
